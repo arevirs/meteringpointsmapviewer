@@ -101,8 +101,6 @@ var SampleApp = function() {
     self.createRoutes = function() {
         self.routes = { };
         
-        self.routes['health'] = function(req, res){ res.send('2'); };
-
         self.routes['/asciimo'] = function(req, res) {
             var link = "http://i.imgur.com/kmbjB.png";
             res.send("<html><body><img src='" + link + "'></body></html>");
@@ -112,6 +110,19 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
         };
+        
+        self.routes['within'] = function(req, res){
+//            var lat1 = parseFloat(req.query.lat1);
+//            var lon1 = parseFloat(req.query.lon1);
+//            var lat2 = parseFloat(req.query.lat2);
+//            var lon2 = parseFloat(req.query.lon2);
+
+//            self.db.collection('parkpoints').find({"pos" : { $geoWithin : { $box: [[lon2,lat2], [lon1,lat1]]}}}).toArray(function(err,names){
+//                res.header("Content-Type:","application/json");
+                res.end('success'));
+//            });
+        };
+
 
     };
 
@@ -136,9 +147,9 @@ var SampleApp = function() {
         for (var r in self.routes) {
             self.app.get(r, self.routes[r]);
         }
+
+        self.app.get('/ws/parks/within', self.routes['within']);
         
-        //define all the url mappings
-        self.app.get('/health', self.routes['health']);
 
     };
 
