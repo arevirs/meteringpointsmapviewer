@@ -233,6 +233,32 @@ line-height: 1.4;
 			maxZoom: 18,
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 		}).addTo(map);
+		
+		function getPins(e){			
+			bounds = map.getBounds();
+			url = "ws/meteringpoints/within?lat1=" + bounds.getNorthEast().lat + "&lon1=" + bounds.getNorthEast().lng + "&lat2=" + bounds.getSouthWest().lat + "&lon2=" + bounds.getSouthWest().lng;
+			$.get(url, pinTheMap, "json")
+		}
+
+		function pinTheMap(data){
+			//clear the current pins
+			map.removeLayer(markerLayerGroup);
+			
+			//add the new pins
+			var markerArray = new Array(data.length)
+			for (var i = 0; i < data.length; i++){
+				meteringpoint = data[i];
+				markerArray[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup(meteringpoint.NMI);			
+			}
+			
+			markerLayerGroup = L.layerGroup(markerArray).addTo(map);	
+
+
+		}
+
+		map.on('dragend', getPins);	
+		map.on('zoomend', getPins);
+		map.whenReady(getPins)
 
 	</script>
 </body>
