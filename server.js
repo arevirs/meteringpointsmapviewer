@@ -199,5 +199,5 @@ var SampleApp = function() {
  */
 var app = new SampleApp();
 app.initialize();
-app.connectDb(app.start());
+app.connectDb(app.start);
 
