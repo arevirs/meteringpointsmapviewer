@@ -28,8 +28,8 @@ var SampleApp = function() {
 //       self.dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
 //       self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD;
 
-        self.ipaddress = process.env.OPENSHIFT_NODEJS_IP;
-        self.port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+        self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost'
+        self.port      = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || 8080;
 
         if (typeof self.ipaddress === "undefined") {
             //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
