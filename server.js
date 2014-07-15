@@ -119,7 +119,7 @@ var SampleApp = function() {
 
 //            self.db.collection('parkpoints').find({"pos" : { $geoWithin : { $box: [[lon2,lat2], [lon1,lat1]]}}}).toArray(function(err,names){
 //                res.header("Content-Type:","application/json");
-                res.end('success'));
+                res.end('success');
 //            });
         };
 
