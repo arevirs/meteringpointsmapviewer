@@ -2,6 +2,7 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
+//var mongodb = require('mongodb');
 
 
 /**
@@ -22,6 +23,11 @@ var SampleApp = function() {
      */
     self.setupVariables = function() {
         //  Set the environment variables we need.
+//       self.dbServer = new mongodb.Server(process.env.OPENSHIFT_MONGODB_DB_HOST,parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT));
+//       self.db = new mongodb.Db(process.env.OPENSHIFT_APP_NAME, self.dbServer, {auto_reconnect: true});
+//       self.dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
+//       self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD;
+
         self.ipaddress = process.env.OPENSHIFT_NODEJS_IP;
         self.port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
@@ -94,6 +100,8 @@ var SampleApp = function() {
      */
     self.createRoutes = function() {
         self.routes = { };
+        
+        self.routes['/health'] = function(req, res){ res.send('1'); };
 
         self.routes['/asciimo'] = function(req, res) {
             var link = "http://i.imgur.com/kmbjB.png";
@@ -113,13 +121,22 @@ var SampleApp = function() {
      */
     self.initializeServer = function() {
         self.createRoutes();
-        self.app = express.createServer();
-
+        //self.app = express.createServer();
+        self.app  = express();
+        self.app.use(express.compress());
+        
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
             self.app.get(r, self.routes[r]);
         }
     };
+
+    //This uses the Connect frameworks body parser to parse the body of the post request
+    self.app.configure(function () {
+          self.app.use(express.bodyParser());
+          self.app.use(express.methodOverride());
+          self.app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+    });
 
 
     /**
