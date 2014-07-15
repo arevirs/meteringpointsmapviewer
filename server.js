@@ -101,7 +101,7 @@ var SampleApp = function() {
     self.createRoutes = function() {
         self.routes = { };
         
-        //self.routes['/health'] = function(req, res){ res.send('1'); };
+        self.routes['/health'] = function(req, res){ res.send('2'); };
 
         self.routes['/asciimo'] = function(req, res) {
             var link = "http://i.imgur.com/kmbjB.png";
