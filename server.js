@@ -101,7 +101,7 @@ var SampleApp = function() {
     self.createRoutes = function() {
         self.routes = { };
         
-        self.routes['/health'] = function(req, res){ res.send('2'); };
+        self.routes['health'] = function(req, res){ res.send('2'); };
 
         self.routes['/asciimo'] = function(req, res) {
             var link = "http://i.imgur.com/kmbjB.png";
@@ -112,6 +112,7 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
         };
+
     };
 
 
@@ -135,6 +136,10 @@ var SampleApp = function() {
         for (var r in self.routes) {
             self.app.get(r, self.routes[r]);
         }
+        
+        //define all the url mappings
+        self.app.get('/health', self.routes['health']);
+
     };
 
     /**
