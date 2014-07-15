@@ -156,7 +156,7 @@ var SampleApp = function() {
     };
 
     //This uses the Connect frameworks body parser to parse the body of the post request
-    self.app.configure(function () {
+    self.configure(function () {
           self.app.use(express.bodyParser());
           self.app.use(express.methodOverride());
           self.app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
