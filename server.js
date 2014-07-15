@@ -2,7 +2,7 @@
 //  OpenShift sample Node application
 var express = require('express');
 var fs      = require('fs');
-//var mongodb = require('mongodb');
+var mongodb = require('mongodb');
 
 
 /**
@@ -23,10 +23,10 @@ var SampleApp = function() {
      */
     self.setupVariables = function() {
         //  Set the environment variables we need.
-//       self.dbServer = new mongodb.Server(process.env.OPENSHIFT_MONGODB_DB_HOST,parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT));
-//       self.db = new mongodb.Db(process.env.OPENSHIFT_APP_NAME, self.dbServer, {auto_reconnect: true});
-//       self.dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
-//       self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD;
+        self.dbServer = new mongodb.Server(process.env.OPENSHIFT_MONGODB_DB_HOST,parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT));
+        self.db = new mongodb.Db(process.env.OPENSHIFT_APP_NAME, self.dbServer, {auto_reconnect: true});
+        self.dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
+        self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD;
 
         self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost'
         self.port      = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || 8080;
@@ -165,7 +165,19 @@ var SampleApp = function() {
         self.initializeServer();
     };
 
+    // Logic to open a database connection. We are going to call this outside of app so it is available to all our functions inside.
 
+    self.connectDb = function(callback){
+      self.db.open(function(err, db){
+        if(err){ throw err };
+        self.db.authenticate(self.dbUser, self.dbPass, {authdb: "admin"}, function(err, res){
+          if(err){ throw err };
+          callback();
+        });
+      });
+    };
+
+    
     /**
      *  Start the server (starts up the sample application).
      */
@@ -187,5 +199,5 @@ var SampleApp = function() {
  */
 var app = new SampleApp();
 app.initialize();
-app.start();
+app.connectDb(app.start());
 
