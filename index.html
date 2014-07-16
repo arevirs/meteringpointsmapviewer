@@ -235,8 +235,9 @@ line-height: 1.4;
 		}).addTo(map);
 
 		var baseMaps = { "OpenStreetMaps" : mapLayer  };
+		var overlayMarkers = { "MeteringPoints" : markerLayerGroup  }
 
-		L.control.layers(baseMaps);
+		L.control.layers(baseMaps, overlayMarkers).addTo(map);
 		
 		function getPins(e){			
 			bounds = map.getBounds();
@@ -258,10 +259,6 @@ line-height: 1.4;
 			}
 			
 			markerLayerGroup = L.layerGroup(markerArray).addTo(map);
-
-			//var overlayMaps = { "MeteringPoints" : markerLayerGroup  };
-
-			//L.control.layers(null,overlayMaps).addTo(map);	
 
 
 		}
