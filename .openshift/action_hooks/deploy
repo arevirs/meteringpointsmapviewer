@@ -8,8 +8,8 @@ then
 	#import the data
 	mongoimport -d $OPENSHIFT_APP_NAME -c meteringpoints --type json --file $OPENSHIFT_REPO_DIR/meteringpointscoord.json  -h $OPENSHIFT_MONGODB_DB_HOST --port $OPENSHIFT_MONGODB_DB_PORT -u admin -p $OPENSHIFT_MONGODB_DB_PASSWORD
 
-	#make the 2D sphere index
-	mongo $OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/$OPENSHIFT_APP_NAME --eval 'db.meteringpoints.ensureIndex( { pos : "2dsphere" } );'
+	#make the 2D index
+	mongo $OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/$OPENSHIFT_APP_NAME --eval 'db.meteringpoints.ensureIndex( { "pos" : "2d" } );'
 	echo "imported the data"
 else
 	echo "There was already data in the database. Not importing"
