@@ -236,7 +236,7 @@ line-height: 1.4;
 
 		var baseMaps = { "OpenStreetMaps" : mapLayer  };
 
-		L.control.layers(mapLayer);
+		L.control.layers(baseMaps);
 		
 		function getPins(e){			
 			bounds = map.getBounds();
@@ -246,7 +246,9 @@ line-height: 1.4;
 
 		function pinTheMap(data){
 			//clear the current pins
-			map.removeLayer(markerLayerGroup);
+			//map.removeLayer(markerLayerGroup);
+			map.clearLayers();
+			//markerLayerGroup.clearLayers();
 			
 			//add the new pins
 			var markerArray = new Array(data.length)
