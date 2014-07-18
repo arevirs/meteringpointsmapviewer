@@ -236,8 +236,9 @@ line-height: 1.4;
 
 		var baseMaps = { "OpenStreetMaps" : mapLayer  };
 		var overlayMarkers = { "MeteringPoints" : markerLayerGroup  }
+		var myControl = L.control.layers(baseMaps)
 
-		L.control.layers(baseMaps, overlayMarkers).addTo(map);
+		myControl.addTo(map);
 		
 		function getPins(e){			
 			bounds = map.getBounds();
@@ -248,7 +249,8 @@ line-height: 1.4;
 		function pinTheMap(data){
 			//clear the current pins
 			map.removeLayer(markerLayerGroup);
-			
+			map.removeControl(myControl);
+			//map.removeControl(info);
 			//markerLayerGroup.clearLayers();
 			
 			//add the new pins
@@ -259,8 +261,12 @@ line-height: 1.4;
 			}
 			
 			markerLayerGroup = L.layerGroup(markerArray).addTo(map);
+			overlayMarkers = { "MoreMeteringPoints" : markerLayerGroup  };
+			myControl = L.control.layers(baseMaps, overlayMarkers);
+			//L.control().addLayer(overlayMarkers).addTo(map);
+			myControl.addTo(map);
 
-
+			
 		}
 
 		map.on('dragend', getPins);	

@@ -23,10 +23,10 @@ var SampleApp = function() {
      */
     self.setupVariables = function() {
         //  Set the environment variables we need.
-        self.dbServer = new mongodb.Server(process.env.OPENSHIFT_MONGODB_DB_HOST,parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT));
-        self.db = new mongodb.Db(process.env.OPENSHIFT_APP_NAME, self.dbServer, {auto_reconnect: true});
-        self.dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME;
-        self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD;
+        self.dbServer = new mongodb.Server(process.env.OPENSHIFT_MONGODB_DB_HOST||'localhost',parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT||27017));
+        self.db = new mongodb.Db(process.env.OPENSHIFT_APP_NAME||'meteringpointsmapviewer', self.dbServer, {auto_reconnect: true});
+        self.dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME||'admin';
+        self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD||'2nlFiR8ShD4s';
 
         self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost'
         self.port      = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || 8080;
