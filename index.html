@@ -10,6 +10,8 @@
 	<![endif]-->
 	<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Milonga' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+	<link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <style type="text/css">
 
@@ -226,16 +228,18 @@ line-height: 1.4;
 	<h1 id="title">Metering Points Viewer</h1>
 	<div id="map"></div>
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script> 
+	<script src="http://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
 	<script>
 		var map = L.map('map').setView([-27.467917, 153.027778], 12);
-		var markerLayerGroup = L.layerGroup().addTo(map);
+////		var markerLayerGroup = L.layerGroup().addTo(map);
 		var mapLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			maxZoom: 18,
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 		}).addTo(map);
-
+		var markerClusterGroup = new L.markerClusterGroup();
+		map.addLayer(markerClusterGroup);
 		var baseMaps = { "OpenStreetMaps" : mapLayer  };
-		var overlayMarkers = { "MeteringPoints" : markerLayerGroup  }
+		var overlayMarkers = { "MeteringPoints" : markerClusterGroup  }
 		var myControl = L.control.layers(baseMaps)
 
 		myControl.addTo(map);
@@ -248,7 +252,9 @@ line-height: 1.4;
 
 		function pinTheMap(data){
 			//clear the current pins
-			map.removeLayer(markerLayerGroup);
+////			map.removeLayer(markerLayerGroup);
+////			map.removeLayer(markerClusterGroup);
+			markerClusterGroup.clearLayers();
 			map.removeControl(myControl);
 			//map.removeControl(info);
 			//markerLayerGroup.clearLayers();
@@ -260,8 +266,10 @@ line-height: 1.4;
 				markerArray[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup(meteringpoint.NMI);			
 			}
 			
-			markerLayerGroup = L.layerGroup(markerArray).addTo(map);
-			overlayMarkers = { "MoreMeteringPoints" : markerLayerGroup  };
+////			markerLayerGroup = L.layerGroup(markerArray).addTo(map);
+			markerClusterGroup.addLayers(markerArray);
+			map.addLayer(markerClusterGroup);
+			overlayMarkers = { "MeteringPoints" : markerClusterGroup  };
 			myControl = L.control.layers(baseMaps, overlayMarkers);
 			//L.control().addLayer(overlayMarkers).addTo(map);
 			myControl.addTo(map);
