@@ -236,11 +236,22 @@ line-height: 1.4;
 			maxZoom: 18,
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 		}).addTo(map);
-		var markerClusterGroup = new L.markerClusterGroup();
-		map.addLayer(markerClusterGroup);
+		var markerClusterGroupAlive = L.markerClusterGroup();
+		var markerClusterGroupDeadLess4 = L.markerClusterGroup();
+		var markerClusterGroupDeadLess8 = L.markerClusterGroup();
+		var markerClusterGroupDeadOver8 = L.markerClusterGroup();
+		map.addLayer(markerClusterGroupAlive);
+		map.addLayer(markerClusterGroupDeadLess4);
+		map.addLayer(markerClusterGroupDeadLess8);
+		map.addLayer(markerClusterGroupDeadOver8);
 		var baseMaps = { "OpenStreetMaps" : mapLayer  };
-		var overlayMarkers = { "MeteringPoints" : markerClusterGroup  }
-		var myControl = L.control.layers(baseMaps)
+		var overlayMarkers = { 
+				"Alive" : markerClusterGroupAlive, 
+				"Dead Less than 4 Hours" : markerClusterGroupDeadLess4,
+				"Dead Less than 8 Hours" : markerClusterGroupDeadLess8,
+				"Dead Over 8 Hours" : markerClusterGroupDeadOver8
+				 }
+		var myControl = L.control.layers(baseMaps, overlayMarkers);
 
 		myControl.addTo(map);
 		
@@ -254,26 +265,54 @@ line-height: 1.4;
 			//clear the current pins
 ////			map.removeLayer(markerLayerGroup);
 ////			map.removeLayer(markerClusterGroup);
-			markerClusterGroup.clearLayers();
-			map.removeControl(myControl);
-			//map.removeControl(info);
-			//markerLayerGroup.clearLayers();
+			markerClusterGroupAlive.clearLayers();
+			markerClusterGroupDeadLess4.clearLayers();
+			markerClusterGroupDeadLess8.clearLayers();
+			markerClusterGroupDeadOver8.clearLayers();
 			
 			//add the new pins
-			var markerArray = new Array(data.length)
+//			var markerArray = new Array(data.length)
+			var markerArrayAlive = new Array();
+			var markerArrayDeadLess4 = new Array();
+			var markerArrayDeadLess8 = new Array();
+			var markerArrayDeadOver8 = new Array();
+			var j=0;// alive
+			var k=0;// dead less than 4 hours
+			var l=0;// dead less than 8 hours
+			var m=0;// dead over 8 hours
 			for (var i = 0; i < data.length; i++){
 				meteringpoint = data[i];
-				markerArray[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup(meteringpoint.NMI);			
-			}
+				if (meteringpoint.interval_seconds<=900)
+					{
+					markerArrayAlive[j] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);
+					j=j+1;
+					}
+				else if (meteringpoint.interval_seconds<=14400)
+					{
+					markerArrayDeadLess4[k] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);;
+					k=k+1;
+					} 			
+				else if (meteringpoint.interval_seconds<=28800)
+					{
+					markerArrayDeadLess8[l] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);;
+					l=l+1;
+					} 			
+				else 
+					{
+					markerArrayDeadOver8[m] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);;
+					m=m+1;
+					} 			
+			}//for
 			
 ////			markerLayerGroup = L.layerGroup(markerArray).addTo(map);
-			markerClusterGroup.addLayers(markerArray);
-			map.addLayer(markerClusterGroup);
-			overlayMarkers = { "MeteringPoints" : markerClusterGroup  };
-			myControl = L.control.layers(baseMaps, overlayMarkers);
-			//L.control().addLayer(overlayMarkers).addTo(map);
-			myControl.addTo(map);
-
+			markerClusterGroupAlive.addLayers(markerArrayAlive);
+			markerClusterGroupDeadLess4.addLayers(markerArrayDeadLess4);
+			markerClusterGroupDeadLess8.addLayers(markerArrayDeadLess8);
+			markerClusterGroupDeadOver8.addLayers(markerArrayDeadOver8);
+			map.addLayer(markerClusterGroupAlive);
+			map.addLayer(markerClusterGroupDeadLess4);
+			map.addLayer(markerClusterGroupDeadLess8);
+			map.addLayer(markerClusterGroupDeadOver8);
 			
 		}
 

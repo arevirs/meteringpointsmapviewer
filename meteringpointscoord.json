@@ -1,22 +1,22 @@
-{"NMI":"3114304902-1","IP":"10.31.180.144","Street":"11 CLINKER STREET","Suburb":"DARRA","Country":"AUSTRALIA","PostCode":"4076","pos":[152.943947,-27.565532]}
-{"NMI":"3115609707-1","IP":"10.31.180.141","Street":"U1 6502 Wickham Street","Suburb":"FORTITUDE VALLEY","Country":"AUSTRALIA","PostCode":"4006","pos":[153.035668,-27.45546]}
-{"NMI":"3116240014-1","IP":"10.31.180.150","Street":"48 - 52 BISHOP ST","Suburb":"KELVIN GROVE","Country":"AUSTRALIA","PostCode":"4059","pos":[153.009025,-27.442605]}
-{"NMI":"3120065848-1","IP":"10.31.180.153","Street":"26 Reddacliff St","Suburb":"NEWSTEAD","Country":"AUSTRALIA","PostCode":"4006","pos":[153.043348,-27.449392]}
-{"NMI":"3120065848-2","IP":"10.31.165.176","Street":"26 Reddacliff St","Suburb":"NEWSTEAD","Country":"AUSTRALIA","PostCode":"4006","pos":[153.043348,-27.449392]}
-{"NMI":"3120113688-1","IP":"10.31.180.142","Street":"55 Curzon St","Suburb":"TENNYSON","Country":"AUSTRALIA","PostCode":"4105","pos":[153.004017,-27.529054]}
-{"NMI":"3120143402-1","IP":"10.31.180.151","Street":"2/524 Bilsen Rd","Suburb":"GEEBUNG","Country":"AUSTRALIA","PostCode":"4034","pos":[153.05599,-27.364663]}
-{"NMI":"3120143402-2","IP":"10.31.180.178","Street":"2/524 Bilsen Rd","Suburb":"GEEBUNG","Country":"AUSTRALIA","PostCode":"4034","pos":[153.05599,-27.364663]}
-{"NMI":"4103736547-1","IP":"10.31.180.174","Street":"1 Shelley Street King Street Wharf","Suburb":"Sydney","Country":"AUSTRALIA","PostCode":"2000","pos":[151.202115,-33.865662]}
-{"NMI":"QB00474118-1","IP":"10.31.162.134","Street":"3 SELWYN ST","Suburb":"BEAUDESERT","Country":"AUSTRALIA","PostCode":"4285","pos":[152.996477,-27.984694]}
-{"NMI":"QB01750887-1","IP":"10.31.157.43","Street":"114 HOWARD STREET","Suburb":"NAMBOUR","Country":"AUSTRALIA","PostCode":"4560","pos":[152.964346,-26.626434]}
-{"NMI":"QB04745353-1","IP":"10.31.145.23","Street":"19 BANNERMAN ST","Suburb":"OXLEY","Country":"AUSTRALIA","PostCode":"4075","pos":[152.980423,-27.564878]}
-{"NMI":"QB05696780-1","IP":"10.31.180.175","Street":"133 RACECOURSE RD","Suburb":"DEAGON","Country":"AUSTRALIA","PostCode":"4017","pos":[153.057586,-27.32139]}
-{"NMI":"QB06359396-1","IP":"10.31.153.196","Street":"54 Kortum Drive","Suburb":"Burleigh Heads","Country":"AUSTRALIA","PostCode":"4220","pos":[153.43618,-28.102056]}
-{"NMI":"QB07914016-1","IP":"10.31.180.143","Street":"16 Forge Close","Suburb":"SUMNER PARK","Country":"AUSTRALIA","PostCode":"4074","pos":[152.926476,-27.55696]}
-{"NMI":"QB08064474-1","IP":"10.31.180.145","Street":"1 Chum Street","Suburb":"DINMORE","Country":"AUSTRALIA","PostCode":"4303","pos":[152.83444,-27.603416]}
-{"NMI":"QB08064474-2","IP":"10.31.180.152","Street":"1 Chum Street","Suburb":"DINMORE","Country":"AUSTRALIA","PostCode":"4303","pos":[152.83444,-27.603416]}
-{"NMI":"QB08064474-3","IP":"10.31.180.148","Street":"1 Chum Street","Suburb":"DINMORE","Country":"AUSTRALIA","PostCode":"4303","pos":[152.83444,-27.603416]}
-{"NMI":"QB13140604-1","IP":"10.31.180.140","Street":"32 WOOGAROO STREET ","Suburb":"GOODNA","Country":"AUSTRALIA","PostCode":"4300","pos":[152.900296,-27.607977]}
-{"NMI":"SUB0000400-A","IP":"10.31.180.149","Street":"13 REO CRES / GLENELG ST","Suburb":"Coolaroo","Country":"AUSTRALIA","PostCode":"3048","pos":[144.935406,-37.65392]}
-{"NMI":"SUB0001147-1","IP":"10.31.165.172","Street":"29 Lilyvale St","Suburb":"Mansfield","Country":"AUSTRALIA","PostCode":"4122","pos":[153.100058,-27.525208]}
-{"NMI":"VBBB000258-1","IP":"10.31.180.147","Street":"Queen St","Suburb":"Wodonga","Country":"AUSTRALIA","PostCode":"3690","pos":[146.895356,-36.12086]}
+{"NMI":"3114304902-1","IP":"10.31.180.144","Street":"11 CLINKER STREET","Suburb":"DARRA","Country":"AUSTRALIA","PostCode":"4076","pos":[152.943947,-27.565532], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"3115609707-1","IP":"10.31.180.141","Street":"U1 6502 Wickham Street","Suburb":"FORTITUDE VALLEY","Country":"AUSTRALIA","PostCode":"4006","pos":[153.035668,-27.45546], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"3116240014-1","IP":"10.31.180.150","Street":"48 - 52 BISHOP ST","Suburb":"KELVIN GROVE","Country":"AUSTRALIA","PostCode":"4059","pos":[153.009025,-27.442605], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"3120065848-1","IP":"10.31.180.153","Street":"26 Reddacliff St","Suburb":"NEWSTEAD","Country":"AUSTRALIA","PostCode":"4006","pos":[153.043348,-27.449392], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"3120065848-2","IP":"10.31.165.176","Street":"26 Reddacliff St","Suburb":"NEWSTEAD","Country":"AUSTRALIA","PostCode":"4006","pos":[153.043348,-27.449392], "interval_text":"05:00:00","interval_seconds":18000}
+{"NMI":"3120113688-1","IP":"10.31.180.142","Street":"55 Curzon St","Suburb":"TENNYSON","Country":"AUSTRALIA","PostCode":"4105","pos":[153.004017,-27.529054], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"3120143402-1","IP":"10.31.180.151","Street":"2/524 Bilsen Rd","Suburb":"GEEBUNG","Country":"AUSTRALIA","PostCode":"4034","pos":[153.05599,-27.364663], "interval_text":"05:00:00","interval_seconds":18000}
+{"NMI":"3120143402-2","IP":"10.31.180.178","Street":"2/524 Bilsen Rd","Suburb":"GEEBUNG","Country":"AUSTRALIA","PostCode":"4034","pos":[153.05599,-27.364663], "interval_text":"09:00:00","interval_seconds":32400}
+{"NMI":"4103736547-1","IP":"10.31.180.174","Street":"1 Shelley Street King Street Wharf","Suburb":"Sydney","Country":"AUSTRALIA","PostCode":"2000","pos":[151.202115,-33.865662], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"QB00474118-1","IP":"10.31.162.134","Street":"3 SELWYN ST","Suburb":"BEAUDESERT","Country":"AUSTRALIA","PostCode":"4285","pos":[152.996477,-27.984694], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"QB01750887-1","IP":"10.31.157.43","Street":"114 HOWARD STREET","Suburb":"NAMBOUR","Country":"AUSTRALIA","PostCode":"4560","pos":[152.964346,-26.626434], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"QB04745353-1","IP":"10.31.145.23","Street":"19 BANNERMAN ST","Suburb":"OXLEY","Country":"AUSTRALIA","PostCode":"4075","pos":[152.980423,-27.564878], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"QB05696780-1","IP":"10.31.180.175","Street":"133 RACECOURSE RD","Suburb":"DEAGON","Country":"AUSTRALIA","PostCode":"4017","pos":[153.057586,-27.32139], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"QB06359396-1","IP":"10.31.153.196","Street":"54 Kortum Drive","Suburb":"Burleigh Heads","Country":"AUSTRALIA","PostCode":"4220","pos":[153.43618,-28.102056], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"QB07914016-1","IP":"10.31.180.143","Street":"16 Forge Close","Suburb":"SUMNER PARK","Country":"AUSTRALIA","PostCode":"4074","pos":[152.926476,-27.55696], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"QB08064474-1","IP":"10.31.180.145","Street":"1 Chum Street","Suburb":"DINMORE","Country":"AUSTRALIA","PostCode":"4303","pos":[152.83444,-27.603416], "interval_text":"04:00:00","interval_seconds":14400}
+{"NMI":"QB08064474-2","IP":"10.31.180.152","Street":"1 Chum Street","Suburb":"DINMORE","Country":"AUSTRALIA","PostCode":"4303","pos":[152.83444,-27.603416], "interval_text":"08:00:00","interval_seconds":28800}
+{"NMI":"QB08064474-3","IP":"10.31.180.148","Street":"1 Chum Street","Suburb":"DINMORE","Country":"AUSTRALIA","PostCode":"4303","pos":[152.83444,-27.603416], "interval_text":"12:00:00","interval_seconds":43200}
+{"NMI":"QB13140604-1","IP":"10.31.180.140","Street":"32 WOOGAROO STREET ","Suburb":"GOODNA","Country":"AUSTRALIA","PostCode":"4300","pos":[152.900296,-27.607977], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"SUB0000400-A","IP":"10.31.180.149","Street":"13 REO CRES / GLENELG ST","Suburb":"Coolaroo","Country":"AUSTRALIA","PostCode":"3048","pos":[144.935406,-37.65392], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"SUB0001147-1","IP":"10.31.165.172","Street":"29 Lilyvale St","Suburb":"Mansfield","Country":"AUSTRALIA","PostCode":"4122","pos":[153.100058,-27.525208], "interval_text":"00:00:00","interval_seconds":0}
+{"NMI":"VBBB000258-1","IP":"10.31.180.147","Street":"Queen St","Suburb":"Wodonga","Country":"AUSTRALIA","PostCode":"3690","pos":[146.895356,-36.12086], "interval_text":"00:00:00","interval_seconds":0}
