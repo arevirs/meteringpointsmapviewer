@@ -247,10 +247,20 @@ line-height: 1.4;
 		var baseMaps = { "OpenStreetMaps" : mapLayer  };
 		var overlayMarkers = { 
 				"Alive" : markerClusterGroupAlive, 
-				"Dead Less than 4 Hours" : markerClusterGroupDeadLess4,
-				"Dead Less than 8 Hours" : markerClusterGroupDeadLess8,
-				"Dead Over 8 Hours" : markerClusterGroupDeadOver8
+				"Offline Less than 4 Hours" : markerClusterGroupDeadLess4,
+				"Offline Less than 8 Hours" : markerClusterGroupDeadLess8,
+				"Offline Over 8 Hours" : markerClusterGroupDeadOver8
 				 }
+		var defaultIcon = L.Icon.extend({
+				options: {
+					iconSize: [25, 41],
+					iconAnchor: [12, 41],
+					popupAnchor: [1, -34],
+					shadowSize: [41, 41]
+				}}); //blue icon is the default
+		var greenIcon = new defaultIcon({iconUrl: 'images/marker-icon_green.png'});
+		var yellowIcon = new defaultIcon({iconUrl: 'images/marker-icon_yellow.png'});
+		var redIcon = new defaultIcon({iconUrl: 'images/marker-icon_red.png'});
 		var myControl = L.control.layers(baseMaps, overlayMarkers);
 
 		myControl.addTo(map);
@@ -258,7 +268,7 @@ line-height: 1.4;
 		function getPins(e){			
 			bounds = map.getBounds();
 			url = "ws/meteringpoints/within?lat1=" + bounds.getNorthEast().lat + "&lon1=" + bounds.getNorthEast().lng + "&lat2=" + bounds.getSouthWest().lat + "&lon2=" + bounds.getSouthWest().lng;
-			$.get(url, pinTheMap, "json")
+			$.get(url, pinTheMap, "json");
 		}
 
 		function pinTheMap(data){
@@ -284,7 +294,7 @@ line-height: 1.4;
 				meteringpoint = data[i];
 				if (meteringpoint.interval_seconds<=900)
 					{
-					markerArrayAlive[j] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);
+					markerArrayAlive[j] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon}).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);
 					j=j+1;
 					}
 				else if (meteringpoint.interval_seconds<=14400)
@@ -294,12 +304,12 @@ line-height: 1.4;
 					} 			
 				else if (meteringpoint.interval_seconds<=28800)
 					{
-					markerArrayDeadLess8[l] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);;
+					markerArrayDeadLess8[l] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: yellowIcon}).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);;
 					l=l+1;
 					} 			
 				else 
 					{
-					markerArrayDeadOver8[m] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);;
+					markerArrayDeadOver8[m] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: redIcon}).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);;
 					m=m+1;
 					} 			
 			}//for

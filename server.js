@@ -3,6 +3,7 @@
 var express = require('express');
 var fs      = require('fs');
 var mongodb = require('mongodb');
+var path 	= require('path');
 //var markercluster = require('leaflet.markercluster');
 
 
@@ -140,6 +141,7 @@ var SampleApp = function() {
         self.app.configure(function () {
               self.app.use(express.bodyParser());
               self.app.use(express.methodOverride());
+              self.app.use('/images',express.static(path.join(__dirname, 'public/images')));
               self.app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
         });
         
