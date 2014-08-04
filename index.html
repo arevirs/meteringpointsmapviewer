@@ -294,22 +294,22 @@ line-height: 1.4;
 				meteringpoint = data[i];
 				if (meteringpoint.interval_seconds<=900)
 					{
-					markerArrayAlive[j] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon}).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);
+					markerArrayAlive[j] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon}).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_seconds);
 					j=j+1;
 					}
 				else if (meteringpoint.interval_seconds<=14400)
 					{
-					markerArrayDeadLess4[k] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);;
+					markerArrayDeadLess4[k] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]]).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_seconds);;
 					k=k+1;
 					} 			
 				else if (meteringpoint.interval_seconds<=28800)
 					{
-					markerArrayDeadLess8[l] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: yellowIcon}).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);;
+					markerArrayDeadLess8[l] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: yellowIcon}).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_seconds);;
 					l=l+1;
 					} 			
 				else 
 					{
-					markerArrayDeadOver8[m] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: redIcon}).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_text);;
+					markerArrayDeadOver8[m] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: redIcon}).bindPopup('<strong>'+meteringpoint.NMI+'</strong><br>'+'('+meteringpoint.IP+')'+'<br>'+meteringpoint.interval_seconds);;
 					m=m+1;
 					} 			
 			}//for

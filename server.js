@@ -1,9 +1,11 @@
 #!/bin/env node
 //  OpenShift sample Node application
-var express = require('express');
-var fs      = require('fs');
-var mongodb = require('mongodb');
-var path 	= require('path');
+var express = require('express');//web application framework for node.
+var fs      = require('fs'); // file I/O module.
+var mongodb = require('mongodb');// the officially supported node.js driver for MongoDB.
+var path 	= require('path'); // module contains utilities for handling and transforming file paths.
+var later   = require('later'); // a library for describing recurring schedules and calculating their future occurrences.
+var restler = require('restler'); // an HTTP(S) client library.
 //var markercluster = require('leaflet.markercluster');
 
 
@@ -153,6 +155,37 @@ var SampleApp = function() {
         self.app.get('/ws/meteringpoints/within', self.routes['within']);
 
     };
+    
+    
+    self.initializeSchedule = function() {
+    	var sched = later.parse.recur().every(15).minute(),
+        t = later.setInterval(function() { refreshInterval(); }, sched);
+
+    	function refreshInterval() {
+    		restler.get('https://www.d2i.com.au/nrtim/meterreadings?find=ForAllNmiExtendedGetIntervalStatus',
+    				{username:'administrator',
+    			     password:'Da$h80ard01',
+    			     headers: { 'Content-Type': 'application/json', 'Accept':'application/json' }
+    			    }).on('complete', function(result, response) {
+    					  if (result instanceof Error) {
+    						    console.log('Error:', new Date()+result.message);
+    						    //this.retry(5000); // try again after 5 sec
+    						  } else if (response.statusCode==200){
+   					    		console.log(new Date()+response.statusCode);
+   					    		result.forEach(function(entry) {
+   					    			self.db.collection('meteringpoints').update(
+   					    					{'NMI':entry.NMI},
+   					    					{$set:{'interval_seconds':entry.interval_seconds}},
+   					    					{upsert:true});
+   					    			console.log('Upserted row:'+entry.NMI+':'+entry.interval_seconds);
+   					    		});
+				    		    console.log('Upserted rows:'+result.length);
+    						  } else {
+    							  console.log('Error:'+new Date()+response.statusCode+result.message);
+    						  }
+    						});
+    	}
+    }
 
     /**
      *  Initializes the sample application.
@@ -164,6 +197,9 @@ var SampleApp = function() {
 
         // Create the express server and routes.
         self.initializeServer();
+        
+        // schedule the task to call a REST web service to get the intervals a NMI has been out.
+        self.initializeSchedule();
     };
 
     // Logic to open a database connection. We are going to call this outside of app so it is available to all our functions inside.
