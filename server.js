@@ -6,6 +6,7 @@ var mongodb = require('mongodb');// the officially supported node.js driver for 
 var path 	= require('path'); // module contains utilities for handling and transforming file paths.
 var later   = require('later'); // a library for describing recurring schedules and calculating their future occurrences.
 var restler = require('restler'); // an HTTP(S) client library.
+global.last_time_refreshed	= new Date();
 //var markercluster = require('leaflet.markercluster');
 
 
@@ -126,6 +127,12 @@ var SampleApp = function() {
                 res.end(JSON.stringify(nmis));
             });
         };
+        self.routes['findall'] = function(req, res){
+            self.db.collection('meteringpoints').find({"pos":{$exists:true}}).toArray(function(err,nmis){
+                res.header("Content-Type:","application/json");
+                res.end(JSON.stringify(nmis));
+            });
+        };
 
     };
 
@@ -153,6 +160,7 @@ var SampleApp = function() {
         }
 
         self.app.get('/ws/meteringpoints/within', self.routes['within']);
+        self.app.get('/ws/meteringpoints/findall', self.routes['findall']);
 
     };
     
