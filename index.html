@@ -236,10 +236,34 @@ line-height: 1.4;
 			maxZoom: 18,
 			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 		}).addTo(map);
-		var markerClusterGroupAlive = L.markerClusterGroup();
-		var markerClusterGroupDeadLess4 = L.markerClusterGroup();
-		var markerClusterGroupDeadLess8 = L.markerClusterGroup();
-		var markerClusterGroupDeadOver8 = L.markerClusterGroup();
+		var markerClusterGroupAlive = new L.MarkerClusterGroup({
+		    iconCreateFunction: function (cluster) {
+		        var childCount = cluster.getChildCount();
+		        var c = ' marker-cluster-small';
+		        return new L.DivIcon({ html: '<div><span><b>' + childCount + '</b></span></div>', className: 'marker-cluster'+c, iconSize: new L.Point(40, 40) });
+		    }
+		});
+		var markerClusterGroupDeadLess4 = new L.MarkerClusterGroup({
+		    iconCreateFunction: function (cluster) {
+		        var childCount = cluster.getChildCount();
+		        var c = ' marker-cluster-medium';
+		        return new L.DivIcon({ html: '<div><span><b>' + childCount + '</b></span></div>', className: 'marker-cluster'+c, iconSize: new L.Point(40, 40) });
+		    }
+		});
+		var markerClusterGroupDeadLess8 = new L.MarkerClusterGroup({
+		    iconCreateFunction: function (cluster) {
+		        var childCount = cluster.getChildCount();
+		        var c = ' marker-cluster-medium';
+		        return new L.DivIcon({ html: '<div><span><b>' + childCount + '</b></span></div>', className: 'marker-cluster'+c, iconSize: new L.Point(40, 40) });
+		    }
+		});
+		var markerClusterGroupDeadOver8 = new L.MarkerClusterGroup({
+		    iconCreateFunction: function (cluster) {
+		        var childCount = cluster.getChildCount();
+		        var c = ' marker-cluster-large';
+		        return new L.DivIcon({ html: '<div><span><b>' + childCount + '</b></span></div>', className: 'marker-cluster'+c, iconSize: new L.Point(40, 40) });
+		    }
+		});
 		map.addLayer(markerClusterGroupAlive);
 		map.addLayer(markerClusterGroupDeadLess4);
 		map.addLayer(markerClusterGroupDeadLess8);
