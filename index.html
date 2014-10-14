@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Metering Dynamics Metering Point Map Viewer</title>
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 	<!--[if lte IE 8]>
     	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
 	<![endif]-->
-	<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Milonga' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
 	<link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
@@ -228,15 +228,34 @@ line-height: 1.4;
 	<p id="title"></p>
 	<script>var d=new Date();document.getElementById("title").innerHTML = 'Metering Points Status('+d.toString()+')'</script>
 	<div id="map"></div>
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script> 
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> 
 	<script src="http://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
 	<script>
-		var map = L.map('map').setView([-27.467917, 153.027778], 12);
+		var map = L.map('map').setView([-25.274398, 133.775136], 5);
 ////		var markerLayerGroup = L.layerGroup().addTo(map);
+		
+//		var ggl = new L.Google('ROADMAP');
+//		map.addLayer(ggl);
+		
 		var mapLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+			// This map option disables world wrapping. by default, it is false.
+	        continuousWorld: false,
+	        // This option disables loading tiles outside of the world bounds.
+	        noWrap: true,
+	        maxZoom: 18,
+			attribution: L.version+'|Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 		}).addTo(map);
+
+		var mapQuestLayer = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', {
+			// This map option disables world wrapping. by default, it is false.
+	        continuousWorld: false,
+	        // This option disables loading tiles outside of the world bounds.
+	        noWrap: true,
+	        maxZoom: 18,
+            attribution: L.version+'|Tiles by <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            subdomains: '1234'
+        }); 
+		
 		var markerClusterGroupAlive = new L.MarkerClusterGroup({
 		    iconCreateFunction: function (cluster) {
 		        var childCount = cluster.getChildCount();
@@ -269,7 +288,7 @@ line-height: 1.4;
 		map.addLayer(markerClusterGroupDeadLess4);
 		map.addLayer(markerClusterGroupDeadLess8);
 		map.addLayer(markerClusterGroupDeadOver8);
-		var baseMaps = { "OpenStreetMaps" : mapLayer  };
+		var baseMaps = { "OpenStreetMaps" : mapLayer, "MapQuestMaps":mapQuestLayer  };
 		var overlayMarkers = { 
 				"Alive" : markerClusterGroupAlive, 
 				"Offline Less than 4 Hours" : markerClusterGroupDeadLess4,
@@ -289,6 +308,8 @@ line-height: 1.4;
 		var myControl = L.control.layers(baseMaps, overlayMarkers);
 
 		myControl.addTo(map);
+
+		L.control.scale({"imperial":false}).addTo(map);
 		
 		function getPins(e){			
 			bounds = map.getBounds();
@@ -348,13 +369,35 @@ line-height: 1.4;
 			map.addLayer(markerClusterGroupDeadLess4);
 			map.addLayer(markerClusterGroupDeadLess8);
 			map.addLayer(markerClusterGroupDeadOver8);
+
+			map.eachLayer(function (layer) {
+				if (layer instanceof L.MarkerClusterGroup) {
+				    console.log(layer);
+				  }
+			});
 			
 		}
 
+		map.on('overlayadd', function(layer) {
+			  console.log(layer.name+' is ON');
+			  console.log(layer);
+		});
+
+		map.on('overlayremove', function(layer) {
+			   console.log(layer.name+' is OFF');
+				console.log(layer);
+		});
+		
 		//map.on('dragend', getPins);	
 		//map.on('zoomend', getPins);
 		map.whenReady(getPins)
-
+		
+		// The HTML we put in bindPopup doesn't exist yet, so we can't just say
+		// $('#mybutton'). Instead, we listen for click events on the map element which
+		// will bubble up from the tooltip, once it's created and someone clicks on it.
+		$('#map').on('click', '.trigger', function() {
+    		alert('Signal strength chart displaying here for '+$(this).text()+'!');
+		});
 	</script>
 </body>
 </html>
