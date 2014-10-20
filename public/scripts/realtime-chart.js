@@ -64,11 +64,12 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 					var series = this.series[0];
 					var chartid = this;
 
-					var intervalID = setInterval(function(chart) {
+					intervalID = setInterval(function(chart) {
 
 						Last_UTC_date_record = chartdata.GraphData.length
-						console.log(Last_UTC_date_record);
-						console.log(chartdata);
+						//console.log('intervalID',intervalID);
+						//console.log(Last_UTC_date_record);
+						//console.log(chartdata);
 
 						var lastgraphdate = (new Date(chartdata.GraphData[(Last_UTC_date_record -1)][0]));
 						var lastdate = (new Date(chartdata.GraphData[(Last_UTC_date_record-1)][0]));
@@ -82,8 +83,8 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 						lastdate = moment(lastdate);
 						nextdate = moment();
 
-						console.log(lastdate.format("YYYY-MM-DD HH:mm:ss"));
-						console.log(nextdate.format("YYYY-MM-DD HH:mm:ss"));
+						//console.log(lastdate.format("YYYY-MM-DD HH:mm:ss"));
+						//console.log(nextdate.format("YYYY-MM-DD HH:mm:ss"));
 
 						var _graphRequest2 = {
 							nmiExtended : nmi.replace(/\n|\r|\t|\s/g, ''),
@@ -140,7 +141,7 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 										for (var adddata = 0; adddata < NRT_usage_data.length; adddata++) {
 
 											var readingdate = (new Date(NRT_usage_data[adddata][0]));
-											console.log('adding time to series '+readingdate.getTime())
+											//console.log('adding time to series '+readingdate.getTime())
 											series.addPoint([readingdate.getTime(), NRT_usage_data[adddata][1]], false, true);
 										}
 
@@ -166,6 +167,14 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 			marginRight : 10,
 
 		},
+		
+	    navigator: {
+	        series: {
+	            includeInCSVExport: false
+	        }
+	    },
+
+		
 		title : {
 			text : 'Near Real Time Signal Strength'
 		},
@@ -214,6 +223,12 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 				enabled : true
 			}
 		}],
+		
+	    exporting: {
+	        csv: {
+	            dateFormat: '%Y-%m-%d %H:%M:%S'
+	        }
+	    },
 
 		legend : {
 			enabled : false
@@ -229,44 +244,6 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 							
 							var chart = $(divhighselected).highcharts();
 
-							if (Edit_On == true) { {
-
-									var XUTCTime = (this.x);
-									console.log(this)
-									console.log(this.series.name)
-									console.log(this.series)
-
-									alertify.prompt("Please add your comment", function(e, str) {
-										console.log(XUTCTime)
-
-										if (e) {
-
-											chart.addSeries({
-												type : 'flags',
-												data : [{
-													// x: Date.UTC(2013,11,20),
-													x : XUTCTime,
-													title : 'E1',
-													text : str
-												}],
-												onSeries : 'dataseries',
-												shape : 'circlepin',
-												width : 16,
-												showInLegend : true
-											}, false);
-
-											chart.redraw();
-
-											alertify.success("You've clicked OK and typed: " + str);
-
-										} else {
-											alertify.error("You've clicked Cancel");
-										}
-									}, "Default Value");
-									return false;
-								}
-
-							}
 						}
 					}
 				},

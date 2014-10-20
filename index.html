@@ -11,7 +11,7 @@
 	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Milonga' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
-	<link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+	<link rel="stylesheet" href="/stylesheets/MarkerCluster.Default.css" />
 	<link rel="stylesheet" href="/stylesheets/leaflet-search/leaflet-search.src.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <style type="text/css">
@@ -235,6 +235,7 @@ line-height: 1.4;
 	<script src="/scripts/highstock/js/highstock.js"></script>
 	<script src="/scripts/highstock/js/modules/exporting.js"></script>
 	<script src="/scripts/highstock/js/modules/no-data-to-display.js"></script>
+	<script src="http://highslide-software.github.io/export-csv/export-csv.js"></script>
 	<script src="/scripts/realtime-chart.js"></script>
 	<script src="/scripts/moment-with-langs.js"></script>
 	<script>
@@ -341,7 +342,10 @@ line-height: 1.4;
 		
 		var controlSearch = new L.Control.Search({layer: markerClusterGroup4Search,
 //													autoCollapse: true,
+													animateLocation: true,		//animate a circle over location found
+													circleLocation: true,		//draw a circle in location found
 													initial: false,
+													zoom:18,
 //													minLength: 10,
 													textErr: 'extended NMI not found!'});
 
@@ -433,15 +437,18 @@ line-height: 1.4;
 		}
 
 		map.on('overlayadd', function(layer) {
-			  console.log(layer.name+' is ON');
-			  console.log(layer);
+			  //console.log(layer.name+' is ON');
+			  //console.log(layer);
 		});
 
 		map.on('overlayremove', function(layer) {
-			   console.log(layer.name+' is OFF');
-				console.log(layer);
+			 //console.log(layer.name+' is OFF');
+			 //console.log(layer);
 		});
-		
+
+		map.on('popupclose', function(layer){
+			window.clearInterval(intervalID);
+			});
 		//map.on('dragend', getPins);	
 		//map.on('zoomend', getPins);
 		map.whenReady(getPins)
@@ -452,7 +459,6 @@ line-height: 1.4;
 		$('#map').on('click', '.trigger', function() {
     		//alert('Signal strength chart displaying here for '+$(this).text()+'!');
     		var nmi=$(this).text();
-            console.log(nmi);
             $('#dialog').dialog();
             $('#dialog').dialog('open');
             		//...which upon when it's opened...  
@@ -465,16 +471,12 @@ line-height: 1.4;
 		});
 
 		function chartMe(evt){
-			console.log(evt);
 			var now=moment();
 			var aMonthAgo=moment().subtract(1,'months').startOf('day');// amonth ago at the starting of the Day
 //			var aMonthAgo=moment().subtract(1,'hours');// amonth ago at the starting of the Day
-			console.log(now);
-			console.log(aMonthAgo);
 			var startDate=aMonthAgo.format("YYYY-MM-DD HH:mm:ss");
 			var endDate=now.format("YYYY-MM-DD HH:mm:ss");
 			var nmi=evt.target.options.title //extended NMI in title property;
-			console.log(nmi);
 
 			var _graphRequest = {
 					nmiExtended : nmi,
@@ -490,7 +492,6 @@ line-height: 1.4;
 				data : _graphRequest,
 				contentType : "application/json; charset=utf-8",
 				success : function(pGraphData) {
-				console.log(pGraphData);
 				RealTimeChart("#popupcontainer", pGraphData, 'line', nmi , 'RSSI', nmi, "dBm", "Near Real Time");
 					}
 				});
