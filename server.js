@@ -151,6 +151,9 @@ var SampleApp = function() {
               self.app.use(express.bodyParser());
               self.app.use(express.methodOverride());
               self.app.use('/images',express.static(path.join(__dirname, 'public/images')));
+              self.app.use('/scripts',express.static(path.join(__dirname, 'public/scripts')));
+              self.app.use('/stylesheets',express.static(path.join(__dirname, 'public/stylesheets')));
+              self.app.use('/highstock',express.static(path.join(__dirname, 'public/scripts/highstock')));
               self.app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
         });
         
