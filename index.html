@@ -239,6 +239,8 @@ line-height: 1.4;
 	<script src="/scripts/realtime-chart.js"></script>
 	<script src="/scripts/moment-with-langs.js"></script>
 	<script>
+		intervalID=0;
+		
 		var map = L.map('map').setView([-25.274398, 133.775136], 4);
 ////		var markerLayerGroup = L.layerGroup().addTo(map);
 		
@@ -383,8 +385,12 @@ line-height: 1.4;
 				meteringpoint = data[i];
 				if (meteringpoint.interval_seconds<=900)
 					{
+					//markerArray4Search[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon, title:meteringpoint.NMI}).bindPopup('<strong>'+meteringpoint.NMI+'</strong>'+'('+meteringpoint.IP+')'+'['+meteringpoint.interval_seconds+' seconds]',{"maxWidth":600});
+					//markerArray4Search[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon, title:meteringpoint.NMI}).bindPopup('<strong>'+meteringpoint.NMI+'</strong>'+'('+meteringpoint.IP+')'+'['+meteringpoint.interval_seconds+' seconds]'+'<div id="popupcontainer" class = "chart" style="height: 300px; width: 300px"></div>');
+					//markerArray4Search[i].on('click',function(evt){chartMe(evt)});							
 					markerArray4Search[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon, title:meteringpoint.NMI}).bindPopup('<strong>'+meteringpoint.NMI+'</strong>'+'('+meteringpoint.IP+')'+'['+meteringpoint.interval_seconds+' seconds]'+'<div id="popupcontainer" class = "chart" style="height: 500px; width: 600px"></div>',{"maxWidth":600});
 					markerArray4Search[i].on('click',function(evt){chartMe(evt)});							
+					//markerArrayAlive[j]=L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon, title:meteringpoint.NMI}).bindPopup('<strong>'+meteringpoint.NMI+'</strong>'+'('+meteringpoint.IP+')'+'['+meteringpoint.interval_seconds+' seconds]',{"maxWidth":600});
 					markerArrayAlive[j]=L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon, title:meteringpoint.NMI}).bindPopup('<strong>'+meteringpoint.NMI+'</strong>'+'('+meteringpoint.IP+')'+'['+meteringpoint.interval_seconds+' seconds]'+'<div id="popupcontainer" class = "chart" style="height: 500px; width: 600px"></div>',{"maxWidth":600});
 					markerArrayAlive[j].on('click',function(evt){chartMe(evt)});							
 					j=j+1;
@@ -447,7 +453,10 @@ line-height: 1.4;
 		});
 
 		map.on('popupclose', function(layer){
-			window.clearInterval(intervalID);
+			if (intervalID!=0){
+				//console.log(intervalID);
+				window.clearInterval(intervalID);
+			}
 			});
 		//map.on('dragend', getPins);	
 		//map.on('zoomend', getPins);

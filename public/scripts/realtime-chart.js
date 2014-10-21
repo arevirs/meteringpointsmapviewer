@@ -226,7 +226,8 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 		
 	    exporting: {
 	        csv: {
-	            dateFormat: '%Y-%m-%d %H:%M:%S'
+	            dateFormat: "%Y-%m-%d %H:%M:%S",
+	            itemDelimiter:','
 	        }
 	    },
 
