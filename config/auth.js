@@ -16,9 +16,9 @@ module.exports = {
 	},
 
 	'googleAuth' : {
-		'clientID' 		: 'your-secret-clientID-here',
-		'clientSecret' 	: 'your-client-secret-here',
-		'callbackURL' 	: 'http://localhost:8080/auth/google/callback'
+		'clientID' 		: '333399999678-p98n3gmmp08f7l920n69445hf3rvcg8v.apps.googleusercontent.com',
+		'clientSecret' 	: '8O8SqrE1qboBG44DQPMVz3h4',
+		'callbackURL' 	: 'http://meteringpointsmapviewer-nrtim.rhcloud.com/auth/google/callback'
 	}
 
 };
