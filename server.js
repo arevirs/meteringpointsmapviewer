@@ -21,7 +21,23 @@ var configDB = require('./config/database.js');
 
 // configuration ===============================================================
 console.log(configDB.url);
-mongoose.connect(configDB.url); // connect to our database
+
+var generateMongoUrl = function(){
+	   // default to a 'localhost' configuration:
+	  var connection_string = 'localhost:27017/meteringpointsmapviewer';
+	  // if OPENSHIFT env variables are present, use the available connection info:
+	  if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+	    connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+	    process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+	    process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+	    process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+	    process.env.OPENSHIFT_APP_NAME;
+	  }
+	  return connection_string;
+	}
+
+
+mongoose.connect(generateMongoUrl()); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
@@ -273,6 +289,7 @@ var SampleApp = function() {
             console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), self.ipaddress, self.port);
             console.log(configDB.url);
+            console.log(generateMongoUrl());
         });
     };
 
