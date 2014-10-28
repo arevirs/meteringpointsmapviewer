@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="http://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
 	<link rel="stylesheet" href="/stylesheets/MarkerCluster.Default.css" />
 	<link rel="stylesheet" href="/stylesheets/leaflet-search/leaflet-search.src.css" />
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <style type="text/css">
 
@@ -226,9 +228,14 @@ line-height: 1.4;
 
 </head>
 <body>
+
 	<p id="title"></p>
 	<script>var d=new Date();document.getElementById("title").innerHTML = 'Metering Points Status('+d.toString()+')'</script>
 	<div id="map"></div>
+	<div class="page-header text-center">
+		<a href="/profile" class="btn btn-default btn-sm">Profile</a>
+		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+	</div>
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> 
 	<script src="http://leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
 	<script src="/scripts/leaflet-search/leaflet-search.src.js"></script>

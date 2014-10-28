@@ -8,6 +8,22 @@ var later   = require('later'); // a library for describing recurring schedules 
 var restler = require('restler'); // an HTTP(S) client library.
 global.last_time_refreshed	= new Date();
 //var markercluster = require('leaflet.markercluster');
+var mongoose = require('mongoose');
+var passport = require('passport');
+var flash    = require('connect-flash');
+
+var morgan       = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser   = require('body-parser');
+var session      = require('express-session');
+
+var configDB = require('./config/database.js');
+
+// configuration ===============================================================
+console.log(configDB.url);
+mongoose.connect(configDB.url); // connect to our database
+
+require('./config/passport')(passport); // pass passport for configuration
 
 
 /**
@@ -111,7 +127,7 @@ var SampleApp = function() {
             res.send("<html><body><img src='" + link + "'></body></html>");
         };
 
-        self.routes['/'] = function(req, res) {
+        self.routes['/map'] = function(req, res) {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
         };
@@ -148,7 +164,23 @@ var SampleApp = function() {
         self.app.use(express.compress());
         //This uses the Connect frameworks body parser to parse the body of the post request
         self.app.configure(function () {
-              self.app.use(express.bodyParser());
+
+        	// set up our express application
+        	self.app.use(morgan('dev')); // log every request to the console
+        	self.app.use(cookieParser()); // read cookies (needed for auth)
+        	self.app.use(bodyParser.json()); // get information from html forms
+        	self.app.use(bodyParser.urlencoded({ extended: true }));
+
+        	self.app.set('view engine', 'ejs'); // set up ejs for templating
+
+        	// required for passport
+        	self.app.use(session({ secret: 'meteringdynamicssecuredsession' })); // session secret
+        	self.app.use(passport.initialize());
+        	self.app.use(passport.session()); // persistent login sessions
+        	self.app.use(flash()); // use connect-flash for flash messages stored in session
+        	
+        	
+        	  self.app.use(express.bodyParser());
               self.app.use(express.methodOverride());
               self.app.use('/images',express.static(path.join(__dirname, 'public/images')));
               self.app.use('/scripts',express.static(path.join(__dirname, 'public/scripts')));
@@ -156,15 +188,20 @@ var SampleApp = function() {
               self.app.use('/highstock',express.static(path.join(__dirname, 'public/scripts/highstock')));
               self.app.use('/nodemodules',express.static(path.join(__dirname, 'node_modules')));
               self.app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+              
+           // routes ======================================================================
+              require('./app/routes.js')(self, passport); // load our routes and pass in our app and fully configured passport
+              
+              
         });
         
-        //  Add handlers for the app (from the routes).
-        for (var r in self.routes) {
-            self.app.get(r, self.routes[r]);
-        }
-
-        self.app.get('/ws/meteringpoints/within', self.routes['within']);
-        self.app.get('/ws/meteringpoints/findall', self.routes['findall']);
+//        //  Add handlers for the app (from the routes).
+//        for (var r in self.routes) {
+//            self.app.get(r, self.routes[r]);
+//        }
+//
+//        self.app.get('/ws/meteringpoints/within', self.routes['within']);
+//        self.app.get('/ws/meteringpoints/findall', self.routes['findall']);
 
     };
     
@@ -235,6 +272,7 @@ var SampleApp = function() {
         self.app.listen(self.port, self.ipaddress, function() {
             console.log('%s: Node server started on %s:%d ...',
                         Date(Date.now() ), self.ipaddress, self.port);
+            console.log(configDB.url);
         });
     };
 
