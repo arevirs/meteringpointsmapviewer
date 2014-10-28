@@ -190,7 +190,7 @@ var SampleApp = function() {
         	self.app.set('view engine', 'ejs'); // set up ejs for templating
 
         	// required for passport
-        	self.app.use(session({ secret: 'meteringdynamicssecuredsession' })); // session secret
+        	self.app.use(session({ secret: 'meteringdynamicssecuredsession', cookie: { maxAge: 1800000 } })); // session secret
         	self.app.use(passport.initialize());
         	self.app.use(passport.session()); // persistent login sessions
         	self.app.use(flash()); // use connect-flash for flash messages stored in session

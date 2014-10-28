@@ -10,9 +10,9 @@ module.exports = {
 	},
 
 	'twitterAuth' : {
-		'consumerKey' 		: 'your-consumer-key-here',
-		'consumerSecret' 	: 'your-client-secret-here',
-		'callbackURL' 		: 'http://localhost:8080/auth/twitter/callback'
+		'consumerKey' 		: '1xSPvAcNlQNOFct2vLJHfzEqR',
+		'consumerSecret' 	: 'HvGBqPzn9b1jyfTmFTx2Lng6Vi1PRIeZvEmRL6tVdTL7PYye3t',
+		'callbackURL' 		: 'http://meteringpointsmapviewer-nrtim.com.au/auth/twitter/callback'
 	},
 
 	'googleAuth' : {
