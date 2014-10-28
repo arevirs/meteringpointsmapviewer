@@ -12,7 +12,7 @@ module.exports = {
 	'twitterAuth' : {
 		'consumerKey' 		: '1xSPvAcNlQNOFct2vLJHfzEqR',
 		'consumerSecret' 	: 'HvGBqPzn9b1jyfTmFTx2Lng6Vi1PRIeZvEmRL6tVdTL7PYye3t',
-		'callbackURL' 		: 'http://meteringpointsmapviewer-nrtim.com.au/auth/twitter/callback'
+		'callbackURL' 		: 'http://meteringpointsmapviewer-nrtim.rhcloud.com/auth/twitter/callback'
 	},
 
 	'googleAuth' : {
