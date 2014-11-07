@@ -97,6 +97,7 @@ module.exports = function(passport) {
 
                         newUser.local.email    = email;
                         newUser.local.password = newUser.generateHash(password);
+                        newUser.role		   = 'visitor';
 
                         newUser.save(function(err) {
                             if (err)
@@ -187,6 +188,7 @@ module.exports = function(passport) {
                         newUser.facebook.token = token;
                         newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
                         newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
+                        newUser.role		   = 'visitor';
 
                         newUser.save(function(err) {
                             if (err)
@@ -265,7 +267,8 @@ module.exports = function(passport) {
                         newUser.twitter.token       = token;
                         newUser.twitter.username    = profile.username;
                         newUser.twitter.displayName = profile.displayName;
-
+                        newUser.role				= 'visitor';
+                        
                         newUser.save(function(err) {
                             if (err)
                                 return done(err);
@@ -343,7 +346,8 @@ module.exports = function(passport) {
                         newUser.google.token = token;
                         newUser.google.name  = profile.displayName;
                         newUser.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
-
+                        newUser.role		 = 'visitor';
+                        
                         newUser.save(function(err) {
                             if (err)
                                 return done(err);

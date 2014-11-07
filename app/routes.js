@@ -7,6 +7,11 @@ module.exports = function(self, passport) {
 		res.render('index.ejs');
 	});
 
+	// show the not autorised page (will also have our login links)
+	self.app.get('/notauthorised', function(req, res) {
+		res.render('notauthorisedyet.ejs');
+	});
+	
 	// PROFILE SECTION =========================
 	self.app.get('/profile', isLoggedIn, function(req, res) {
 		res.render('profile.ejs', {
@@ -199,7 +204,13 @@ module.exports = function(self, passport) {
 // route middleware to ensure user is logged in
 function isLoggedIn(req, res, next) {
 	if (req.isAuthenticated())
-		return next();
-
-	res.redirect('/');
+		if (req.user.hasAccess('authorised'))
+		  return next();
+		else
+			{
+			console.log('not authorised!');
+		    res.redirect('/notauthorised');
+			}
+    else 
+    	res.redirect('/');
 }

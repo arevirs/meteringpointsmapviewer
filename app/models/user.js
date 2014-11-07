@@ -30,6 +30,17 @@ var userSchema = mongoose.Schema({
 
 });
 
+// a visitor can only authenticate to the metering points status application, however only
+// a user is authorised to use the metering points status map.
+userSchema.plugin(require('mongoose-role'), {
+	  roles: ['user','visitor'],
+	  accessLevels: {
+	    'authenticated': ['visitor'],
+	    'authorised': ['user']
+	  }
+	});
+
+
 // generating a hash
 userSchema.methods.generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
