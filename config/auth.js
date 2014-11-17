@@ -4,9 +4,9 @@
 module.exports = {
 
 	'facebookAuth' : {
-		'clientID' 		: 'your-secret-clientID-here', // your App ID
-		'clientSecret' 	: 'your-client-secret-here', // your App Secret
-		'callbackURL' 	: 'http://localhost:8080/auth/facebook/callback'
+		'clientID' 		: '1520045398254074', // your App ID
+		'clientSecret' 	: 'ab7801997cb08d9771fb1117a7de8f9d', // your App Secret
+		'callbackURL' 	: 'http://meteringpointsmapviewer-nrtim.rhcloud.com/auth/facebook/callback'
 	},
 
 	'twitterAuth' : {
