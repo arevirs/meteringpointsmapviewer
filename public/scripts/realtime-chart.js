@@ -1,10 +1,20 @@
 function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, titleText) {
 
 //	$(divhighselected).children('.graph').show();
-	var thischartdata = chartdata;
+	var thisGraphData = chartdata.GraphData;
 
+	var NRT_usage_data = [];
+	var NRT_usage_data_temp = [];
+	// if there are any missing readings add gaps with nulls
+	fillGapsWithNull(thisGraphData,NRT_usage_data);
+	
+//	console.log(thisGraphData);
+//	console.log(NRT_usage_data);
 	//var totaldates = (thischartdata.Dates).length;
 
+	//NRT_usage_data = [];
+	//NRT_usage_data_temp = [];
+	
 	var selecteddiv = divhighselected;
 
 	$(selecteddiv).data('Near_Real_Time_intervalID', 0)
@@ -17,20 +27,17 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 	var start = +new Date();
 	var i = 0;
 
-	var NRT_usage_data = [];
-	var NRT_usage_data_temp = [];
-
 	// NRT_usage_data = chartdata.GraphData
 
-	for (var adddata = 0; adddata < chartdata.GraphData.length; adddata++) {
+////	for (var adddata = 0; adddata < chartdata.GraphData.length; adddata++) {
 
-//		var readingdate = (new Date(chartdata.GraphData[adddata][0]));
-		var readingdate = (chartdata.GraphData[adddata][0]);
-		var readingvalue = (chartdata.GraphData[adddata][1]);
-		NRT_usage_data_temp.push(readingdate)
-		NRT_usage_data_temp.push(readingvalue)
-		NRT_usage_data.push(NRT_usage_data_temp)
-		NRT_usage_data_temp = []
+////		var readingdate = (new Date(chartdata.GraphData[adddata][0]));
+////		var readingdate = (chartdata.GraphData[adddata][0]);
+////		var readingvalue = (chartdata.GraphData[adddata][1]);
+////		NRT_usage_data_temp.push(readingdate)
+////		NRT_usage_data_temp.push(readingvalue)
+////		NRT_usage_data.push(NRT_usage_data_temp)
+////		NRT_usage_data_temp = []
 
 		//if (i < 30) {
 		//	console.log("intervaltime--" + Interval_time)
@@ -38,7 +45,7 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 		//	console.log("demand factor Concumption---" + demand_factor)
 		//	console.log("Interval_Demand---" + Interval_Demand)
 		//}
-	}
+////	}
 
 	//console.log(NRT_usage_data);
 
@@ -114,30 +121,23 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 
 									if (pGraphData.GraphData.length > 0) {
 
-										NRT_usage_data = []
-										NRT_usage_data_temp = []
+										NRT_usage_data = [];
+										NRT_usage_data_temp = [];
 
-										var readingdate = (new Date(pGraphData.GraphData[0][0]));
-
-										var readingvalue = (pGraphData.GraphData[0][1]);
-
-										NRT_usage_data_temp.push(readingdate)
-										NRT_usage_data_temp.push(readingvalue)
-										NRT_usage_data.push(NRT_usage_data_temp)
-										NRT_usage_data_temp = []
-
-										for (var adddata = 0; adddata < pGraphData.GraphData.length; adddata++) {
-
-											var readingdate = (new Date(pGraphData.GraphData[adddata][0]));
-											var readingvalue = (pGraphData.GraphData[adddata][1]);
-
-											NRT_usage_data_temp.push(readingdate)
-											NRT_usage_data_temp.push(readingvalue)
-											NRT_usage_data.push(NRT_usage_data_temp)
-											NRT_usage_data_temp = []
-											chartdata.GraphData = pGraphData.GraphData
+										var readingdate = series.data[series.data.length-1].x; // Last current epoch in chart
+										var readingvalue = series.data[series.data.length-1].y; // Last current value in chart
+										// need a null gap when the next reading happens over 5 and half minutes later.
+										if (pGraphData.GraphData[0][0]-readingdate>305000) {
+											NRT_usage_data_temp.push(readingdate+150000);
+											NRT_usage_data_temp.push(null);
+											NRT_usage_data.push(NRT_usage_data_temp);
+											NRT_usage_data_temp = [];
 										}
-
+                                        // if there are any gaps fill them with nulls
+										fillGapsWithNull(pGraphData.GraphData, NRT_usage_data);
+										
+										chartdata.GraphData = pGraphData.GraphData;
+										
 										for (var adddata = 0; adddata < NRT_usage_data.length; adddata++) {
 
 											var readingdate = (new Date(NRT_usage_data[adddata][0]));
@@ -207,6 +207,7 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 
 		series : [{
 			name : name,
+			connectNulls: false,
 			data : NRT_usage_data,
 			
 			marker : {
@@ -271,5 +272,48 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 			text : name + " - Updated at..."  + (new Date()) // dummy text to reserve space for dynamic subtitle
 		},
 	});
+}
+
+function fillGapsWithNull(graphData, NRT_GraphData) {
+	var readingdate = 0;
+	var readingvalue = 0;
+	var NRT_usage_data_temp = [];
+
+	for (var dIndex = 0; dIndex < graphData.length; dIndex++) {
+		if (dIndex<graphData.length-1) {
+		if (graphData[dIndex+1][0]-graphData[dIndex][0]>305000) {
+			readingdate = (graphData[dIndex][0]);
+			readingvalue = (graphData[dIndex][1]);
+			NRT_usage_data_temp.push(readingdate);
+			NRT_usage_data_temp.push(readingvalue);
+			NRT_GraphData.push(NRT_usage_data_temp);
+			NRT_usage_data_temp = [];
+			// if time difference between consecutive readings is over than 5 and a half minutes, add a gap with null value
+			NRT_usage_data_temp.push(readingdate+150000);
+			NRT_usage_data_temp.push(null);
+			NRT_GraphData.push(NRT_usage_data_temp);
+			NRT_usage_data_temp = [];
+		}
+		else {
+			readingdate = (graphData[dIndex][0]);
+			readingvalue = (graphData[dIndex][1]);
+			NRT_usage_data_temp.push(readingdate);
+			NRT_usage_data_temp.push(readingvalue);
+			NRT_GraphData.push(NRT_usage_data_temp);
+			NRT_usage_data_temp = [];
+
+		}
+		}
+		else{
+			readingdate = (graphData[dIndex][0]);
+			readingvalue = (graphData[dIndex][1]);
+			NRT_usage_data_temp.push(readingdate);
+			NRT_usage_data_temp.push(readingvalue);
+			NRT_GraphData.push(NRT_usage_data_temp);
+			NRT_usage_data_temp = [];
+		}
+			
+	};
+	
 }
 

@@ -1,47 +1,1313 @@
-{"NMI":"QB04745353-1","IP":"10.31.145.23","Street":"19 BANNERMAN ST","Suburb":"OXLEY","State":"QLD","Postcode":"4075","Country":"AUSTRALIA","pos":[152.980423,-27.564878],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB06359396-1","IP":"10.31.153.196","Street":"54 Kortum Drive","Suburb":"Burleigh Heads","State":"QLD","Postcode":"4220","Country":"AUSTRALIA","pos":[153.43618,-28.102056],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB01750887-1","IP":"10.31.157.43","Street":"114 HOWARD STREET","Suburb":"NAMBOUR","State":"QLD","Postcode":"4560","Country":"AUSTRALIA","pos":[152.964346,-26.626434],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB00474118-1","IP":"10.31.162.134","Street":"3 SELWYN ST","Suburb":"BEAUDESERT","State":"QLD","Postcode":"4285","Country":"AUSTRALIA","pos":[152.996477,-27.984694],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"SUB0001147-1","IP":"10.31.165.172","Street":"29 Lilyvale St","Suburb":"Mansfield","State":"QLD","Postcode":"4122","Country":"AUSTRALIA","pos":[153.100058,-27.525208],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3120065848-2","IP":"10.31.165.176","Street":"26 Reddacliff St","Suburb":"NEWSTEAD","State":"QLD","Postcode":"4006","Country":"AUSTRALIA","pos":[153.043348,-27.449392],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB13140604-1","IP":"10.31.180.140","Street":"32 WOOGAROO STREET ","Suburb":"GOODNA","State":"QLD","Postcode":"4300","Country":"AUSTRALIA","pos":[152.900296,-27.607977],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3115609707-1","IP":"10.31.180.141","Street":"U1 6502 Wickham Street","Suburb":"FORTITUDE VALLEY","State":"QLD","Postcode":"4006","Country":"AUSTRALIA","pos":[153.035668,-27.45546],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3120113688-1","IP":"10.31.180.142","Street":"55 Curzon St","Suburb":"TENNYSON","State":"QLD","Postcode":"4105","Country":"AUSTRALIA","pos":[153.004017,-27.529054],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB07914016-1","IP":"10.31.180.143","Street":"16 Forge Close","Suburb":"SUMNER PARK","State":"QLD","Postcode":"4074","Country":"AUSTRALIA","pos":[152.937694,-27.568152],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3114304902-1","IP":"10.31.180.144","Street":"11 CLINKER STREET","Suburb":"DARRA","State":"QLD","Postcode":"4076","Country":"AUSTRALIA","pos":[152.943947,-27.565532],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB08064474-1","IP":"10.31.180.145","Street":"1 Chum Street","Suburb":"DINMORE","State":"QLD","Postcode":"4303","Country":"AUSTRALIA","pos":[152.83444,-27.603416],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"VBBB000258-1","IP":"10.31.180.147","Street":"Queen St","Suburb":"Wodonga","State":"VIC","Postcode":"3690","Country":"AUSTRALIA","pos":[146.895356,-36.12086],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB08064474-3","IP":"10.31.180.148","Street":"1 Chum Street","Suburb":"DINMORE","State":"QLD","Postcode":"4303","Country":"AUSTRALIA","pos":[152.83444,-27.603416],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"SUB0000400-A","IP":"10.31.180.149","Street":"13 REO CRES / GLENELG ST","Suburb":"Coolaroo","State":"VIC","Postcode":"3048","Country":"AUSTRALIA","pos":[144.935406,-37.65392],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3116240014-1","IP":"10.31.180.150","Street":"48 - 52 BISHOP ST","Suburb":"KELVIN GROVE","State":"QLD","Postcode":"4059","Country":"AUSTRALIA","pos":[153.009025,-27.442605],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3120143402-1","IP":"10.31.180.151","Street":"2/524 Bilsen Rd","Suburb":"GEEBUNG","State":"QLD","Postcode":"4034","Country":"AUSTRALIA","pos":[153.05599,-27.364663],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB08064474-2","IP":"10.31.180.152","Street":"1 Chum Street","Suburb":"DINMORE","State":"QLD","Postcode":"4303","Country":"AUSTRALIA","pos":[152.83444,-27.603416],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3120065848-1","IP":"10.31.180.153","Street":"26 Reddacliff St","Suburb":"NEWSTEAD","State":"QLD","Postcode":"4006","Country":"AUSTRALIA","pos":[153.043348,-27.449392],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"4103736547-1","IP":"10.31.180.174","Street":"1 Shelley Street King Street Wharf","Suburb":"Sydney","State":"NSW","Postcode":"2000","Country":"AUSTRALIA","pos":[151.202115,-33.865662],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB05696780-1","IP":"10.31.180.175","Street":"133 RACECOURSE RD","Suburb":"DEAGON","State":"QLD","Postcode":"4017","Country":"AUSTRALIA","pos":[153.057586,-27.32139],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3120143402-2","IP":"10.31.180.178","Street":"2/524 Bilsen Rd","Suburb":"GEEBUNG","State":"QLD","Postcode":"4034","Country":"AUSTRALIA","pos":[153.05599,-27.364663],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"SUB0000613-1","IP":"10.31.203.138","Street":"26 Reddacliff St","Suburb":"NEWSTEAD","State":"QLD","Postcode":"4006","Country":"AUSTRALIA","pos":[153.043348,-27.449392],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3120061545-1","IP":"10.31.203.140","Street":"89 Harcourt Road","Suburb":"Darra","State":"QLD","Postcode":"4076","Country":"AUSTRALIA","pos":[152.958499,-27.566329],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"SUB0000704-1","IP":"10.31.203.143","Street":"181 Reynolds Rd","Suburb":"Doncaster","State":"VIC","Postcode":"3109","Country":"AUSTRALIA","pos":[145.16862,-37.762135],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"SUB0000919-1","IP":"10.31.203.148","Street":"183-225 CANTERBURY RD","Suburb":"BAYSWATER","State":"VIC","Postcode":"3153","Country":"AUSTRALIA","pos":[145.280519,-37.830995],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"VAAA002206-1","IP":"10.31.203.150","Street":"11 Esplanade Esp","Suburb":"ST KILDA","State":"VIC","Postcode":"3182","Country":"AUSTRALIA","pos":[144.945365,-37.836986],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB05695686-1","IP":"10.31.203.153","Street":"4 CHINOOK ST","Suburb":"EVERTON HILLS","State":"QLD","Postcode":"4053","Country":"AUSTRALIA","pos":[152.982676,-27.383565],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"4102011807-1","IP":"10.31.203.154","Street":"7/904 Bourke St","Suburb":"Zetland","State":"NSW","Postcode":"2017","Country":"AUSTRALIA","pos":[151.206394,-33.903612],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB02628899-1","IP":"10.31.203.159","Street":"120 OLD GYMPIE RD","Suburb":"CABOOLTURE","State":"QLD","Postcode":"4510","Country":"AUSTRALIA","pos":[152.942801,-27.060901],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3116900162-1","IP":"10.31.203.162","Street":"117A Toongarra Rd","Suburb":"Wulkuraka","State":"QLD","Postcode":"4305","Country":"AUSTRALIA","pos":[152.72511,-27.616761],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3114149915-1","IP":"10.31.203.165","Street":"180 FAIRFIELD ROAD","Suburb":"ANNERLEY","State":"QLD","Postcode":"4103","Country":"AUSTRALIA","pos":[153.025501,-27.508752],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QSSPEGX371-1","IP":"10.31.203.169","Street":"Rogers Street","Suburb":"Spring Hill","State":"QLD","Postcode":"4000","Country":"AUSTRALIA","pos":[153.026482,-27.458107],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB04042085-1","IP":"10.31.203.170","Street":"219 Boundary St","Suburb":"Spring Hill","State":"QLD","Postcode":"4000","Country":"AUSTRALIA","pos":[153.028964,-27.461164],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QSSPEGX551-1","IP":"10.31.203.171","Street":"438 Earnshaw Road","Suburb":"BANYO","State":"QLD","Postcode":"4014","Country":"AUSTRALIA","pos":[153.082528,-27.377665],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB06763782-1","IP":"10.31.203.173","Street":"9 KENWAY DR","Suburb":"UNDERWOOD","State":"QLD","Postcode":"4119","Country":"AUSTRALIA","pos":[153.116187,-27.618572],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB03301443-1","IP":"10.31.203.175","Street":"28 Greenore Street","Suburb":"Bracken Ridge","State":"QLD","Postcode":"4017","Country":"AUSTRALIA","pos":[153.025095,-27.317546],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB02839326-1","IP":"10.31.203.176","Street":"1 306 JUNCTION RD ","Suburb":"CLAYFIELD ","State":"QLD","Postcode":"4011","Country":"AUSTRALIA","pos":[153.049318,-27.414963],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3117078059-1","IP":"10.31.203.178","Street":"Coopers Plains, Station 37, Beaton Street","Suburb":"COOPERS PLAINS","State":"QLD","Postcode":"4108","Country":"AUSTRALIA","pos":[153.039276,-27.56459],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB03299333-1","IP":"10.31.203.179","Street":"56 Granite Street","Suburb":"Geebung","State":"QLD","Postcode":"4034","Country":"AUSTRALIA","pos":[153.049784,-27.364194],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QSSPEGX551-2","IP":"10.31.203.180","Street":"438 Earnshaw Road","Suburb":"BANYO","State":"QLD","Postcode":"4014","Country":"AUSTRALIA","pos":[153.082528,-27.377665],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3116710754-1","IP":"10.31.203.181","Street":"37 Harbour Road","Suburb":"HAMILTON","State":"QLD","Postcode":"4007","Country":"AUSTRALIA","pos":[153.069076,-27.440578],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB10445617-1","IP":"10.31.203.182","Street":"94-102 BLUNDER ROAD","Suburb":"OXLEY","State":"QLD","Postcode":"4075","Country":"AUSTRALIA","pos":[152.981941,-27.570357],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3116841522-1","IP":"10.31.203.183","Street":"U4, 2043 Sandgate Rd","Suburb":"VIRGINIA","State":"QLD","Postcode":"4014","Country":"AUSTRALIA","pos":[153.062803,-27.368829],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB03301109-1","IP":"10.31.203.184","Street":"2436 MOGGILL RD","Suburb":"MOGGILL","State":"QLD","Postcode":"4070","Country":"AUSTRALIA","pos":[152.921705,-27.53644],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"3117357489-1","IP":"10.31.203.185","Street":"LOT 29 SOUTHLINK ST","Suburb":"PARKINSON","State":"QLD","Postcode":"4115","Country":"AUSTRALIA","pos":[153.033687,-27.657749],"interval_text":"00:00:00","interval_seconds":0}
-{"NMI":"QB02894076-1","IP":"10.31.203.186","Street":"Bayswater St","Suburb":"MILTON","State":"QLD","Postcode":"4064","Country":"AUSTRALIA","pos":[152.998688,-27.468247],"interval_text":"00:00:00","interval_seconds":0}
+/* 0 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc701a"),
+    "NMI" : "QB13140604-1",
+    "IP" : "10.31.180.140",
+    "Street" : "32 WOOGAROO STREET ",
+    "Suburb" : "GOODNA",
+    "State" : "QLD",
+    "Postcode" : "4300",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.900296, 
+        -27.607977
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 1 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc701b"),
+    "NMI" : "3115609707-1",
+    "IP" : "10.31.180.141",
+    "Street" : "U1 6502 Wickham Street",
+    "Suburb" : "FORTITUDE VALLEY",
+    "State" : "QLD",
+    "Postcode" : "4006",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.035668, 
+        -27.45546
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc701c"),
+    "NMI" : "3120113688-1",
+    "IP" : "10.31.180.142",
+    "Street" : "55 Curzon St",
+    "Suburb" : "TENNYSON",
+    "State" : "QLD",
+    "Postcode" : "4105",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.004017, 
+        -27.529054
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc701d"),
+    "NMI" : "QB07914016-1",
+    "IP" : "10.31.180.143",
+    "Street" : "16 Forge Close",
+    "Suburb" : "SUMNER PARK",
+    "State" : "QLD",
+    "Postcode" : "4074",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.937694, 
+        -27.568152
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc701e"),
+    "NMI" : "3114304902-1",
+    "IP" : "10.31.180.144",
+    "Street" : "11 CLINKER STREET",
+    "Suburb" : "DARRA",
+    "State" : "QLD",
+    "Postcode" : "4076",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.943947, 
+        -27.565532
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc701f"),
+    "NMI" : "QB08064474-1",
+    "IP" : "10.31.180.145",
+    "Street" : "1 Chum Street",
+    "Suburb" : "DINMORE",
+    "State" : "QLD",
+    "Postcode" : "4303",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.83444, 
+        -27.603416
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7021"),
+    "NMI" : "QB08064474-3",
+    "IP" : "10.31.180.148",
+    "Street" : "1 Chum Street",
+    "Suburb" : "DINMORE",
+    "State" : "QLD",
+    "Postcode" : "4303",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.83444, 
+        -27.603416
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7022"),
+    "NMI" : "SUB0000400-A",
+    "IP" : "10.31.180.149",
+    "Street" : "13 REO CRES / GLENELG ST",
+    "Suburb" : "Coolaroo",
+    "State" : "VIC",
+    "Postcode" : "3048",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.935406, 
+        -37.65392
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 8 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7023"),
+    "NMI" : "3116240014-1",
+    "IP" : "10.31.180.150",
+    "Street" : "48 - 52 BISHOP ST",
+    "Suburb" : "KELVIN GROVE",
+    "State" : "QLD",
+    "Postcode" : "4059",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.009025, 
+        -27.442605
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 294
+}
+
+/* 9 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7024"),
+    "NMI" : "3120143402-1",
+    "IP" : "10.31.180.151",
+    "Street" : "2/524 Bilsen Rd",
+    "Suburb" : "GEEBUNG",
+    "State" : "QLD",
+    "Postcode" : "4034",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.05599, 
+        -27.364663
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 10 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7025"),
+    "NMI" : "QB08064474-2",
+    "IP" : "10.31.180.152",
+    "Street" : "1 Chum Street",
+    "Suburb" : "DINMORE",
+    "State" : "QLD",
+    "Postcode" : "4303",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.83444, 
+        -27.603416
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 11 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7026"),
+    "NMI" : "3120065848-1",
+    "IP" : "10.31.180.153",
+    "Street" : "26 Reddacliff St",
+    "Suburb" : "NEWSTEAD",
+    "State" : "QLD",
+    "Postcode" : "4006",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.043348, 
+        -27.449392
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 12 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7027"),
+    "NMI" : "4103736547-1",
+    "IP" : "10.31.180.174",
+    "Street" : "1 Shelley Street King Street Wharf",
+    "Suburb" : "Sydney",
+    "State" : "NSW",
+    "Postcode" : "2000",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        151.202115, 
+        -33.865662
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 13 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7028"),
+    "NMI" : "QB05696780-1",
+    "IP" : "10.31.180.175",
+    "Street" : "133 RACECOURSE RD",
+    "Suburb" : "DEAGON",
+    "State" : "QLD",
+    "Postcode" : "4017",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.057586, 
+        -27.32139
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 14 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7029"),
+    "NMI" : "3120143402-2",
+    "IP" : "10.31.180.178",
+    "Street" : "2/524 Bilsen Rd",
+    "Suburb" : "GEEBUNG",
+    "State" : "QLD",
+    "Postcode" : "4034",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.05599, 
+        -27.364663
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 15 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc702a"),
+    "NMI" : "3120061545-1",
+    "IP" : "10.31.203.140",
+    "Street" : "89 Harcourt Road",
+    "Suburb" : "Darra",
+    "State" : "QLD",
+    "Postcode" : "4076",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.958499, 
+        -27.566329
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 16 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc702b"),
+    "NMI" : "QB05695686-1",
+    "IP" : "10.31.203.153",
+    "Street" : "4 CHINOOK ST",
+    "Suburb" : "EVERTON HILLS",
+    "State" : "QLD",
+    "Postcode" : "4053",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.982676, 
+        -27.383565
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 17 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc702c"),
+    "NMI" : "4102011807-1",
+    "IP" : "10.31.203.154",
+    "Street" : "7/904 Bourke St",
+    "Suburb" : "Zetland",
+    "State" : "NSW",
+    "Postcode" : "2017",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        151.206394, 
+        -33.903612
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 18 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc702d"),
+    "NMI" : "QB02628899-1",
+    "IP" : "10.31.203.159",
+    "Street" : "120 OLD GYMPIE RD",
+    "Suburb" : "CABOOLTURE",
+    "State" : "QLD",
+    "Postcode" : "4510",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.942801, 
+        -27.060901
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 19 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc702e"),
+    "NMI" : "3116900162-1",
+    "IP" : "10.31.203.162",
+    "Street" : "117A Toongarra Rd",
+    "Suburb" : "Wulkuraka",
+    "State" : "QLD",
+    "Postcode" : "4305",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.72511, 
+        -27.616761
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 297
+}
+
+/* 20 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc702f"),
+    "NMI" : "3114149915-1",
+    "IP" : "10.31.203.165",
+    "Street" : "180 FAIRFIELD ROAD",
+    "Suburb" : "ANNERLEY",
+    "State" : "QLD",
+    "Postcode" : "4103",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.025501, 
+        -27.508752
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 21 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7030"),
+    "NMI" : "QSSPEGX371-1",
+    "IP" : "10.31.203.169",
+    "Street" : "Rogers Street",
+    "Suburb" : "Spring Hill",
+    "State" : "QLD",
+    "Postcode" : "4000",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.026482, 
+        -27.458107
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 22 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7031"),
+    "NMI" : "QB04042085-1",
+    "IP" : "10.31.203.170",
+    "Street" : "219 Boundary St",
+    "Suburb" : "Spring Hill",
+    "State" : "QLD",
+    "Postcode" : "4000",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.028964, 
+        -27.461164
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 23 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7032"),
+    "NMI" : "QSSPEGX551-1",
+    "IP" : "10.31.203.171",
+    "Street" : "438 Earnshaw Road",
+    "Suburb" : "BANYO",
+    "State" : "QLD",
+    "Postcode" : "4014",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.082528, 
+        -27.377665
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 24 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7033"),
+    "NMI" : "QB06763782-1",
+    "IP" : "10.31.203.173",
+    "Street" : "9 KENWAY DR",
+    "Suburb" : "UNDERWOOD",
+    "State" : "QLD",
+    "Postcode" : "4119",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.116187, 
+        -27.618572
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 25 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7034"),
+    "NMI" : "QB03301443-1",
+    "IP" : "10.31.203.175",
+    "Street" : "28 Greenore Street",
+    "Suburb" : "Bracken Ridge",
+    "State" : "QLD",
+    "Postcode" : "4017",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.025095, 
+        -27.317546
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 26 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7035"),
+    "NMI" : "QB02839326-1",
+    "IP" : "10.31.203.176",
+    "Street" : "1 306 JUNCTION RD ",
+    "Suburb" : "CLAYFIELD ",
+    "State" : "QLD",
+    "Postcode" : "4011",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.049318, 
+        -27.414963
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 27 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7037"),
+    "NMI" : "QB03299333-1",
+    "IP" : "10.31.203.179",
+    "Street" : "56 Granite Street",
+    "Suburb" : "Geebung",
+    "State" : "QLD",
+    "Postcode" : "4034",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.049784, 
+        -27.364194
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 28 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7038"),
+    "NMI" : "QSSPEGX551-2",
+    "IP" : "10.31.203.180",
+    "Street" : "438 Earnshaw Road",
+    "Suburb" : "BANYO",
+    "State" : "QLD",
+    "Postcode" : "4014",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.082528, 
+        -27.377665
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 610795
+}
+
+/* 29 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7039"),
+    "NMI" : "3116710754-1",
+    "IP" : "10.31.203.181",
+    "Street" : "37 Harbour Road",
+    "Suburb" : "HAMILTON",
+    "State" : "QLD",
+    "Postcode" : "4007",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.069076, 
+        -27.440578
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 30 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc703a"),
+    "NMI" : "QB10445617-1",
+    "IP" : "10.31.203.182",
+    "Street" : "94-102 BLUNDER ROAD",
+    "Suburb" : "OXLEY",
+    "State" : "QLD",
+    "Postcode" : "4075",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.981941, 
+        -27.570357
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 294
+}
+
+/* 31 */
+{
+    "_id" : ObjectId("54bc6012f7d50286f1214e13"),
+    "NMI" : "4103745417-1",
+    "IP" : "10.224.0.154",
+    "Street" : "639 Gardeners Road",
+    "Suburb" : "Mascot",
+    "State" : "NSW",
+    "Postcode" : "2020",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        151.18816, 
+        -33.921388
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 32 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7014"),
+    "NMI" : "QB04745353-1",
+    "IP" : "10.31.145.23",
+    "Street" : "19 BANNERMAN ST",
+    "Suburb" : "OXLEY",
+    "State" : "QLD",
+    "Postcode" : "4075",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.980423, 
+        -27.564878
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 55
+}
+
+/* 33 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7015"),
+    "NMI" : "QB06359396-1",
+    "IP" : "10.31.153.196",
+    "Street" : "54 Kortum Drive",
+    "Suburb" : "Burleigh Heads",
+    "State" : "QLD",
+    "Postcode" : "4220",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.43618, 
+        -28.102056
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 34 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7016"),
+    "NMI" : "QB01750887-1",
+    "IP" : "10.31.157.43",
+    "Street" : "114 HOWARD STREET",
+    "Suburb" : "NAMBOUR",
+    "State" : "QLD",
+    "Postcode" : "4560",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.964346, 
+        -26.626434
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 55
+}
+
+/* 35 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7017"),
+    "NMI" : "QB00474118-1",
+    "IP" : "10.31.162.134",
+    "Street" : "3 SELWYN ST",
+    "Suburb" : "BEAUDESERT",
+    "State" : "QLD",
+    "Postcode" : "4285",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.996477, 
+        -27.984694
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 55
+}
+
+/* 36 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7018"),
+    "NMI" : "SUB0001147-1",
+    "IP" : "10.31.165.172",
+    "Street" : "29 Lilyvale St",
+    "Suburb" : "Mansfield",
+    "State" : "QLD",
+    "Postcode" : "4122",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.100058, 
+        -27.525208
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 37 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7019"),
+    "NMI" : "3120065848-2",
+    "IP" : "10.31.165.176",
+    "Street" : "26 Reddacliff St",
+    "Suburb" : "NEWSTEAD",
+    "State" : "QLD",
+    "Postcode" : "4006",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.043348, 
+        -27.449392
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 38 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc7036"),
+    "NMI" : "3117078059-1",
+    "IP" : "10.31.203.178",
+    "Street" : "Coopers Plains, Station 37, Beaton Street",
+    "Suburb" : "COOPERS PLAINS",
+    "State" : "QLD",
+    "Postcode" : "4108",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.039276, 
+        -27.56459
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 39 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc703b"),
+    "NMI" : "3116841522-1",
+    "IP" : "10.31.203.183",
+    "Street" : "U4, 2043 Sandgate Rd",
+    "Suburb" : "VIRGINIA",
+    "State" : "QLD",
+    "Postcode" : "4014",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.062803, 
+        -27.368829
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 40 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc703c"),
+    "NMI" : "QB03301109-1",
+    "IP" : "10.31.203.184",
+    "Street" : "2436 MOGGILL RD",
+    "Suburb" : "MOGGILL",
+    "State" : "QLD",
+    "Postcode" : "4070",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.921705, 
+        -27.53644
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 41 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc703d"),
+    "NMI" : "3117357489-1",
+    "IP" : "10.31.203.185",
+    "Street" : "LOT 29 SOUTHLINK ST",
+    "Suburb" : "PARKINSON",
+    "State" : "QLD",
+    "Postcode" : "4115",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.033687, 
+        -27.657749
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 42 */
+{
+    "_id" : ObjectId("5456c1810fe0f9b53cdc703e"),
+    "NMI" : "QB02894076-1",
+    "IP" : "10.31.203.186",
+    "Street" : "Bayswater St",
+    "Suburb" : "MILTON",
+    "State" : "QLD",
+    "Postcode" : "4064",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        152.998688, 
+        -27.468247
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 43 */
+{
+    "_id" : ObjectId("546143740fe0f9b53cdc703f"),
+    "NMI" : "SUB0000613-1",
+    "IP" : "10.31.203.138",
+    "Street" : "26 Reddacliff St",
+    "Suburb" : "NEWSTEAD",
+    "State" : "QLD",
+    "Postcode" : "4006",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.043348, 
+        -27.449392
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 44 */
+{
+    "_id" : ObjectId("54693cd20fe0f9b53cdc7040"),
+    "NMI" : "SUB0000704-1",
+    "IP" : "10.31.203.143",
+    "Street" : "181 Reynolds Rd",
+    "Suburb" : "Doncaster",
+    "State" : "VIC",
+    "Postcode" : "3109",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        145.16862, 
+        -37.762135
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 45 */
+{
+    "_id" : ObjectId("54693cd20fe0f9b53cdc7041"),
+    "NMI" : "SUB0000919-1",
+    "IP" : "10.31.203.148",
+    "Street" : "183-225 CANTERBURY RD",
+    "Suburb" : "BAYSWATER",
+    "State" : "VIC",
+    "Postcode" : "3153",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        145.280519, 
+        -37.830995
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 294
+}
+
+/* 46 */
+{
+    "_id" : ObjectId("54693cd20fe0f9b53cdc7042"),
+    "NMI" : "VAAA002206-1",
+    "IP" : "10.31.203.150",
+    "Street" : "11 Esplanade Esp",
+    "Suburb" : "ST KILDA",
+    "State" : "VIC",
+    "Postcode" : "3182",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.945365, 
+        -37.836986
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 47 */
+{
+    "_id" : ObjectId("546ec88c0fe0f9b53cdc7048"),
+    "NMI" : "SUB0000457-5",
+    "IP" : "10.31.203.145",
+    "Street" : "52 Collins Street",
+    "Suburb" : "Melbourne",
+    "State" : "VIC",
+    "Postcode" : "3000",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.971839, 
+        -37.813559
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 48 */
+{
+    "_id" : ObjectId("546ec88c0fe0f9b53cdc7049"),
+    "NMI" : "SUB0000689-5",
+    "IP" : "10.31.203.146",
+    "Street" : "1100 - 1152 Christies Road and 408 - 546 Hopkins Road",
+    "Suburb" : "RAVENHALL",
+    "State" : "VIC",
+    "Postcode" : "3023",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.752396, 
+        -37.765212
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 4495
+}
+
+/* 49 */
+{
+    "_id" : ObjectId("546ec88c0fe0f9b53cdc704a"),
+    "NMI" : "6001299605-1",
+    "IP" : "10.31.203.149",
+    "Street" : "38 ANNANDALE ROAD",
+    "Suburb" : "TULLAMARINE",
+    "State" : "VIC",
+    "Postcode" : "3043",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.854336, 
+        -37.701429
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 50 */
+{
+    "_id" : ObjectId("546ec88c0fe0f9b53cdc704b"),
+    "NMI" : "SUB0000457-4",
+    "IP" : "10.31.203.151",
+    "Street" : "52 Collins Street",
+    "Suburb" : "Melbourne",
+    "State" : "VIC",
+    "Postcode" : "3000",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.971839, 
+        -37.813559
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 51 */
+{
+    "_id" : ObjectId("546ec88c0fe0f9b53cdc704c"),
+    "NMI" : "VDDD000127-1",
+    "IP" : "10.31.203.152",
+    "Street" : "RALEIGH RD",
+    "Suburb" : "MARIBYRNONG",
+    "State" : "VIC",
+    "Postcode" : "3032",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.891731, 
+        -37.768932
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 52 */
+{
+    "_id" : ObjectId("5472d2880fe0f9b53cdc704d"),
+    "NMI" : "SUB0000651-4",
+    "IP" : "10.31.204.25",
+    "Street" : "Cnr Victoria and Burnley Street",
+    "Suburb" : "Richmond",
+    "State" : "VIC",
+    "Postcode" : "3121",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        145.01058, 
+        -37.81208
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 53 */
+{
+    "_id" : ObjectId("5472d2880fe0f9b53cdc704e"),
+    "NMI" : "6102375673-1",
+    "IP" : "10.31.204.27",
+    "Street" : "LEVEL 3 VICTORIA GARDENS SHOPPING CENTRE CNR VICTORIA & BURNLEY STREETS",
+    "Suburb" : "RICHMOND",
+    "State" : "VIC",
+    "Postcode" : "3121",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        145.01058, 
+        -37.81208
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 54 */
+{
+    "_id" : ObjectId("5472d2880fe0f9b53cdc704f"),
+    "NMI" : "SUB0000651-5",
+    "IP" : "10.31.204.28",
+    "Street" : "Cnr Victoria and Burnley Street",
+    "Suburb" : "Richmond",
+    "State" : "VIC",
+    "Postcode" : "3121",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        145.01058, 
+        -37.81208
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 55 */
+{
+    "_id" : ObjectId("5472d2880fe0f9b53cdc7050"),
+    "NMI" : "SUB0000651-3",
+    "IP" : "10.31.204.29",
+    "Street" : "Cnr Victoria and Burnley Street",
+    "Suburb" : "Richmond",
+    "State" : "VIC",
+    "Postcode" : "3121",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        145.01058, 
+        -37.81208
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 56 */
+{
+    "_id" : ObjectId("5472d2880fe0f9b53cdc7051"),
+    "NMI" : "SUB0000651-2",
+    "IP" : "10.31.204.30",
+    "Street" : "Cnr Victoria and Burnley Street",
+    "Suburb" : "Richmond",
+    "State" : "VIC",
+    "Postcode" : "3121",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        145.01058, 
+        -37.81208
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 57 */
+{
+    "_id" : ObjectId("5472d2880fe0f9b53cdc7052"),
+    "NMI" : "SUB0000651-1",
+    "IP" : "10.31.204.31",
+    "Street" : "Cnr Victoria and Burnley Street",
+    "Suburb" : "Richmond",
+    "State" : "VIC",
+    "Postcode" : "3121",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        145.01058, 
+        -37.81208
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 58 */
+{
+    "_id" : ObjectId("54753b250fe0f9b53cdc7053"),
+    "NMI" : "SUB0001245-2",
+    "IP" : "10.31.204.20",
+    "Street" : "WENDOUREE VILLAGE",
+    "Suburb" : "WENDOUREE",
+    "State" : "VIC",
+    "Postcode" : "3355",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        143.82488, 
+        -37.53401
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 59 */
+{
+    "_id" : ObjectId("54753b250fe0f9b53cdc7054"),
+    "NMI" : "SUB0001245-3",
+    "IP" : "10.31.204.23",
+    "Street" : "WENDOUREE VILLAGE",
+    "Suburb" : "WENDOUREE",
+    "State" : "VIC",
+    "Postcode" : "3355",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        143.82488, 
+        -37.53401
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 60 */
+{
+    "_id" : ObjectId("54753b250fe0f9b53cdc7055"),
+    "NMI" : "SUB0001245-1",
+    "IP" : "10.31.204.26",
+    "Street" : "WENDOUREE VILLAGE",
+    "Suburb" : "WENDOUREE",
+    "State" : "VIC",
+    "Postcode" : "3355",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        143.82488, 
+        -37.53401
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 61 */
+{
+    "_id" : ObjectId("5476b5bf0fe0f9b53cdc7056"),
+    "NMI" : "SUB0001245-4",
+    "IP" : "10.31.204.24",
+    "Street" : "WENDOUREE VILLAGE",
+    "Suburb" : "WENDOUREE",
+    "State" : "VIC",
+    "Postcode" : "3355",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        143.82488, 
+        -37.53401
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 62 */
+{
+    "_id" : ObjectId("5476b5bf0fe0f9b53cdc7057"),
+    "NMI" : "VCCCLC0010-1",
+    "IP" : "10.31.205.14",
+    "Street" : "LOT -1 TAYLORS RD",
+    "Suburb" : "Keilor Downs",
+    "State" : "VIC",
+    "Postcode" : "3038",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.80718, 
+        -37.72746
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 63 */
+{
+    "_id" : ObjectId("547bae4c0fe0f9b53cdc7058"),
+    "NMI" : "SUB0001246-2",
+    "IP" : "10.31.205.13",
+    "Street" : "LOT -1 TAYLORS RD",
+    "Suburb" : "Keilor Downs",
+    "State" : "VIC",
+    "Postcode" : "3038",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.80718, 
+        -37.72746
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 64 */
+{
+    "_id" : ObjectId("547bae4c0fe0f9b53cdc7059"),
+    "NMI" : "SUB0001246-1",
+    "IP" : "10.31.205.6",
+    "Street" : "LOT -1 TAYLORS RD",
+    "Suburb" : "Keilor Downs",
+    "State" : "VIC",
+    "Postcode" : "3038",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.80718, 
+        -37.72746
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 65 */
+{
+    "_id" : ObjectId("5488e12a0fe0f9b53cdc705a"),
+    "NMI" : "4310840552-1",
+    "IP" : "10.31.203.155",
+    "Street" : "215 North Rocks Rd",
+    "Suburb" : "North Rocks",
+    "State" : "NSW",
+    "Postcode" : "2151",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        151.012322, 
+        -33.776724
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 66 */
+{
+    "_id" : ObjectId("5490c4f30fe0f9b53cdc705b"),
+    "NMI" : "VCCCBC0021-1",
+    "IP" : "10.31.205.10",
+    "Street" : "WENDOUREE VILLAGE",
+    "Suburb" : "WENDOUREE",
+    "State" : "VIC",
+    "Postcode" : "3355",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        143.82488, 
+        -37.53401
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 67 */
+{
+    "_id" : ObjectId("54bc6012f7d50286f1214e14"),
+    "NMI" : "4103796267-1",
+    "IP" : "10.224.0.150",
+    "Street" : "47 Bourke Road",
+    "Suburb" : "Alexandria",
+    "State" : "NSW",
+    "Postcode" : "2020",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        151.193822, 
+        -33.91217
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 68 */
+{
+    "_id" : ObjectId("54bc6012f7d50286f1214e15"),
+    "NMI" : "4103802536-1",
+    "IP" : "10.224.0.149",
+    "Street" : "7 Bourke Road",
+    "Suburb" : "Alexandria",
+    "State" : "NSW",
+    "Postcode" : "2015",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        151.201727, 
+        -33.905737
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
+
+/* 69 */
+{
+    "_id" : ObjectId("54bc6012f7d50286f1214e16"),
+    "NMI" : "NCCCZ00153-1",
+    "IP" : "10.224.0.152",
+    "Street" : "Unit A 639 Gardeners Road",
+    "Suburb" : "Mascot",
+    "State" : "NSW",
+    "Postcode" : "2020",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        151.18816, 
+        -33.921388
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 294
+}
+
+/* 70 */
+{
+    "_id" : ObjectId("54bd88b1f7d50286f1214e1a"),
+    "NMI" : "6103032797-1",
+    "IP" : "10.31.204.21",
+    "Street" : "600 Lorimer Street",
+    "Suburb" : "PORT MELBOURNE",
+    "State" : "VIC",
+    "Postcode" : "3207",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        144.915948, 
+        -37.82147
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 71 */
+{
+    "_id" : ObjectId("54bd88b1f7d50286f1214e1b"),
+    "NMI" : "4103512518-1",
+    "IP" : "10.31.204.247",
+    "Street" : "639 Gardeners Road",
+    "Suburb" : "Mascot",
+    "State" : "NSW",
+    "Postcode" : "2020",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        151.18816, 
+        -33.921388
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 295
+}
+
+/* 72 */
+{
+    "_id" : ObjectId("54c73469201a82ce12a6e78e"),
+    "NMI" : "QB09758089-A",
+    "IP" : "10.31.203.139",
+    "Street" : "South Bank Parklands, 30B GREY ST",
+    "Suburb" : "SOUTH BRISBANE",
+    "State" : "QLD",
+    "Postcode" : "4101",
+    "Country" : "AUSTRALIA",
+    "pos" : [ 
+        153.018255, 
+        -27.474837
+    ],
+    "interval_text" : "00:00:00",
+    "interval_seconds" : 296
+}
