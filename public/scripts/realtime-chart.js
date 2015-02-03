@@ -127,7 +127,7 @@ function RealTimeChart(divhighselected, chartdata, charttype, nmi, units, name, 
 										var readingdate = series.data[series.data.length-1].x; // Last current epoch in chart
 										var readingvalue = series.data[series.data.length-1].y; // Last current value in chart
 										// need a null gap when the next reading happens over 5 and half minutes later.
-										if (pGraphData.GraphData[0][0]-readingdate>305000) {
+										if (pGraphData.GraphData[0][0]-readingdate>330000) {
 											NRT_usage_data_temp.push(readingdate+150000);
 											NRT_usage_data_temp.push(null);
 											NRT_usage_data.push(NRT_usage_data_temp);
@@ -281,7 +281,7 @@ function fillGapsWithNull(graphData, NRT_GraphData) {
 
 	for (var dIndex = 0; dIndex < graphData.length; dIndex++) {
 		if (dIndex<graphData.length-1) {
-		if (graphData[dIndex+1][0]-graphData[dIndex][0]>305000) {
+		if (graphData[dIndex+1][0]-graphData[dIndex][0]>330000) {
 			readingdate = (graphData[dIndex][0]);
 			readingvalue = (graphData[dIndex][1]);
 			NRT_usage_data_temp.push(readingdate);
