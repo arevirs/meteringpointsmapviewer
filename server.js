@@ -148,6 +148,32 @@ var SampleApp = function() {
             res.send(self.cache_get('index.html') );
         };
         
+        self.routes['postMeteringPointsArray'] = function(req, res){
+
+            var meteringpoints = JSON.stringify(req.body);
+            var JSONmeteringpoints = JSON.parse(meteringpoints);
+//            console.log(req.body);
+//            console.log("BODY:"+JSON.stringify(req.body));
+//            var jsonObject = JSON.parse(req.body);
+//            console.log(jsonObject);
+
+//            var JSONArray='[{"NMI":"XXXXXXXXXX-","IP":"10.31.203.166","pos":[153.070142,-27.377148],"interval_seconds":0},{"NMI":"YYYYYYYYYY-","IP":"10.31.203.166","pos":[153.070142,-27.377148],"interval_seconds":0}]'
+
+//            res.statusCode = 200;
+//            res.send("OK\n");
+            self.db.collection('meteringpoints').remove({}); // delete first and then insert
+            self.db.collection('meteringpoints').insert(JSONmeteringpoints,{continueOnError:true}, function(err, result){
+                ////we should have caught errors here for a real app
+            	if (err) throw err;
+//            	console.log("this is the result "+result);
+                //res.end('success');
+            });
+          res.statusCode = 200;
+          res.send("OK\n");
+
+        
+        };
+        
         self.routes['within'] = function(req, res){
             var lat1 = parseFloat(req.query.lat1);
             var lon1 = parseFloat(req.query.lon1);
@@ -207,6 +233,7 @@ var SampleApp = function() {
               
            // routes ======================================================================
               require('./app/routes.js')(self, passport); // load our routes and pass in our app and fully configured passport
+              //self.app.get('/ws/meteringpoints/postJSONArray', self.routes['postMeteringPointsArray']);
               
               
         });
