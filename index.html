@@ -390,7 +390,15 @@ line-height: 1.4;
 			var m=0;// dead over 8 hours
 			for (var i = 0; i < data.length; i++){
 				meteringpoint = data[i];
-				if (meteringpoint.interval_seconds<=900)
+				if (meteringpoint.interval_seconds<=0)
+				{
+					//markerArray4Search[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon, title:meteringpoint.NMI}).bindPopup('<strong>'+meteringpoint.NMI+'</strong>'+'('+meteringpoint.IP+')'+'['+meteringpoint.interval_seconds+' seconds]',{"maxWidth":600});
+					//markerArray4Search[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon, title:meteringpoint.NMI}).bindPopup('<strong>'+meteringpoint.NMI+'</strong>'+'('+meteringpoint.IP+')'+'['+meteringpoint.interval_seconds+' seconds]'+'<div id="popupcontainer" class = "chart" style="height: 300px; width: 300px"></div>');
+					//markerArray4Search[i].on('click',function(evt){chartMe(evt)});							
+					markerArray4Search[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon, title:meteringpoint.NMI}).bindPopup('<strong>'+meteringpoint.NMI+'</strong>'+'('+meteringpoint.IP+')'+'['+meteringpoint.interval_seconds+' seconds]'+'<div id="popupcontainer" class = "chart" style="height: 500px; width: 600px"></div>',{"maxWidth":600});
+					markerArray4Search[i].on('click',function(evt){chartMe(evt)});
+				}							
+				else if (meteringpoint.interval_seconds<=900)
 					{
 					//markerArray4Search[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon, title:meteringpoint.NMI}).bindPopup('<strong>'+meteringpoint.NMI+'</strong>'+'('+meteringpoint.IP+')'+'['+meteringpoint.interval_seconds+' seconds]',{"maxWidth":600});
 					//markerArray4Search[i] = L.marker([meteringpoint.pos[1], meteringpoint.pos[0]], {icon: greenIcon, title:meteringpoint.NMI}).bindPopup('<strong>'+meteringpoint.NMI+'</strong>'+'('+meteringpoint.IP+')'+'['+meteringpoint.interval_seconds+' seconds]'+'<div id="popupcontainer" class = "chart" style="height: 300px; width: 300px"></div>');
