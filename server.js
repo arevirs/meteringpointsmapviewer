@@ -210,8 +210,8 @@ var SampleApp = function() {
         	// set up our express application
         	self.app.use(morgan('dev')); // log every request to the console
         	self.app.use(cookieParser()); // read cookies (needed for auth)
-        	self.app.use(bodyParser.json()); // get information from html forms
-        	self.app.use(bodyParser.urlencoded({ extended: true }));
+        	self.app.use(bodyParser.json({limit: '5mb'})); // get information from html forms
+        	self.app.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
 
         	self.app.set('view engine', 'ejs'); // set up ejs for templating
 
