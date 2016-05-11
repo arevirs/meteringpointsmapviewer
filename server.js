@@ -164,14 +164,20 @@ var SampleApp = function() {
             self.db.collection('meteringpoints').remove({}); // delete first and then insert
             self.db.collection('meteringpoints').insert(JSONmeteringpoints,{continueOnError:true}, function(err, result){
                 ////we should have caught errors here for a real app
-            	if (err) throw err;
+            	if (err) {
+            		console.log(err);
+            		res.StatusCode = 500;
+            	}//throw err
+            	else {
+            		res.StatusCode = 200;
+            	};
+        		res.send(result);
 //            	console.log("this is the result "+result);
                 //res.end('success');
             });
-          res.statusCode = 200;
-          res.send("OK\n");
-
-        
+          //res.statusCode = 200;
+          //res.send("OK\n");
+      
         };
         
         self.routes['within'] = function(req, res){
