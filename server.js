@@ -166,12 +166,11 @@ var SampleApp = function() {
                 ////we should have caught errors here for a real app
             	if (err) {
             		console.log(err);
-            		res.StatusCode = 500;
+            		res.status(500).send("Error happended!");
             	}//throw err
             	else {
-            		res.StatusCode = 200;
+            		res.status(201).send(result.length+" Metering Points Inserted!");
             	};
-        		res.send(result);
 //            	console.log("this is the result "+result);
                 //res.end('success');
             });
