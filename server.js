@@ -166,7 +166,7 @@ var SampleApp = function() {
                 ////we should have caught errors here for a real app
             	if (err) {
             		console.log(err);
-            		res.status(200).send("Error happended! but "+result.length+" Metering Points were Inserted!\n"+err);
+            		res.status(200).send("Error happended!\n"+err);
             	}//throw err
             	else {
             		res.status(201).send(result.length+" Metering Points Inserted!");
