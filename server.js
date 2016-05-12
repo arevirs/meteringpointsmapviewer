@@ -162,7 +162,7 @@ var SampleApp = function() {
 //            res.statusCode = 200;
 //            res.send("OK\n");
             self.db.collection('meteringpoints').remove({}); // delete first and then insert
-            self.db.collection('meteringpoints').insert(JSONmeteringpoints,{continueOnError:true}, function(err, result){
+            self.db.collection('meteringpoints').insert(JSONmeteringpoints,{safe:true, continueOnError:true}, function(err, result){
                 ////we should have caught errors here for a real app
             	if (err) {
             		console.log(err);
