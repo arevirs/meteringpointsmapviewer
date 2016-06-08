@@ -66,7 +66,7 @@ var SampleApp = function() {
         self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD||'2nlFiR8ShD4s';
 
         self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost'
-        self.port      = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || 8080;
+        self.port      = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || 8098
 
         if (typeof self.ipaddress === "undefined") {
             //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
@@ -192,7 +192,7 @@ var SampleApp = function() {
         };
         self.routes['findall'] = function(req, res){
             self.db.collection('meteringpoints').find({"pos":{$exists:true}}).toArray(function(err,nmis){
-                res.header("Content-Type:","application/json");
+                res.header("Content-Type","application/json");
                 res.end(JSON.stringify(nmis));
             });
         };
