@@ -66,7 +66,7 @@ var SampleApp = function() {
         self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD||'2nlFiR8ShD4s';
 
         self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost'
-        self.port      = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || 8098
+        self.port      = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || process.env.PORT || 8098
 
         if (typeof self.ipaddress === "undefined") {
             //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
@@ -322,6 +322,7 @@ var SampleApp = function() {
                         Date(Date.now() ), self.ipaddress, self.port);
             console.log(configDB.url);
             console.log(generateMongoUrl());
+			console.log('IISNode version is ' + process.env.IISNODE_VERSION + ' and Node.js version is ' + process.version);
         });
     };
 
