@@ -260,6 +260,7 @@ var SampleApp = function() {
 
     	function refreshInterval() {
     		restler.get('https://www.d2i.com.au/nrtim/meterreadings?find=ForAllNmiExtendedGetIntervalStatus',
+//    		restler.get('http://localhost:8080/NRTIS/meterreadings?find=ForAllNmiExtendedGetIntervalStatus',
     				{username:'administrator',
     			     password:'Da$h80ard01',
     			     headers: { 'Content-Type': 'application/json', 'Accept':'application/json' }
@@ -272,17 +273,34 @@ var SampleApp = function() {
    					    		result.forEach(function(entry) {
    					    			self.db.collection('meteringpoints').update(
    					    					{'NMI':entry.NMI},
-   					    					{$set:{'interval_seconds':entry.interval_seconds}},
+   					    					{$set:{'interval_seconds':entry.interval_seconds,'last_datetime':new Date(entry.last_datetime)}},
    					    					{upsert:true});
-   					    			console.log('Upserted row:'+entry.NMI+':'+entry.interval_seconds);
+//   					    			console.log('Upserted row:'+entry.NMI+':'+entry.interval_seconds+entry.last_datetime);
    					    		});
-				    		    console.log('Upserted rows:'+result.length);
-    						  } else {
+				    		    console.log(result.length+' rows Upserted!');
+				        		// update the interval_seconds again.
+				        		self.db.collection('meteringpoints').aggregate([
+				        		   // for the rows with interval_seconds > 0 and last_datetime column exists 
+				        		   {$match:{$and:[{'interval_seconds':{$gt:0}},{'last_datetime':{$exists:true,$ne:null}}]}},
+				        		   // compute the difference in milliseconds between now and last_datetime
+				        		   {$project:{'interval_milliseconds':{ $divide:[{$subtract:[new Date(),'$last_datetime']},1]}}}
+				        		                                                ], function(err,result){
+				        				result.forEach(function(document){
+				        					self.db.collection('meteringpoints').update(
+				        							{'_id':document._id},
+				        							// compute the differemce in seconds between now and last_datetime
+				        							{$set:{"interval_seconds":Math.floor(document.interval_milliseconds/1000)}}
+				        							);
+				        					//console.log('updated row:'+document._id+' '+document.interval_milliseconds);
+				        				});
+				        				console.log(result.length+' rows Updated!');
+				        		});
+				        		} else {
     							  console.log('Error:'+new Date()+response.statusCode+result.message);
     						  }
     						});
-    	}
-    }
+    	} // refreshInterval
+    } //initilizeSchedule
 
     /**
      *  Initializes the sample application.
