@@ -33,6 +33,8 @@ module.exports = function(self, passport) {
     self.app.get('/ws/meteringpoints/within', isLoggedIn, self.routes['within']);
     self.app.get('/ws/meteringpoints/findall', isLoggedIn, self.routes['findall']);
     self.app.post('/ws/meteringpoints/postJSONArray',  self.routes['postMeteringPointsArray']);
+    self.app.get('/ws/meteringpoints/findNMIsCoordinates', self.routes['findNMIsCoordinates']);
+    
 
 	
 	
