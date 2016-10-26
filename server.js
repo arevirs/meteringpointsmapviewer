@@ -200,7 +200,7 @@ var SampleApp = function() {
         self.routes['findNMIsCoordinates'] = function(req, res){
         	var NMIs=(req.query.NMIs == null)?"":req.query.NMIs; // comma delimited list of NMIs -> NMI-1,NMI-2 to get the coordinates
         	var NMIsCriteria=NMIs.split(","); // create an array of NMIs
-            self.db.collection('meteringpoints').find({$and:[{"NMI":{$in:NMIsCriteria}},{'pos':{$exists:true,$ne:null}}]},{NMI:1,_id:0,pos:1}).toArray(function(err,nmis){
+            self.db.collection('meteringpoints').find({$and:[{"NMI":{$in:NMIsCriteria}},{'pos':{$exists:true,$ne:null}}]},{NMI:1,_id:0,pos:1,interval_seconds:1}).toArray(function(err,nmis){
             	(req.query.callback == null)?res.json(nmis):res.jsonp(nmis); // return jsonp or json depending which one was requested
             });
         } // findNMIsCoordinates
