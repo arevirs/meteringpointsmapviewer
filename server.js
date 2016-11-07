@@ -26,14 +26,14 @@ var generateMongoUrl = function(){
 	   // default to a 'localhost' configuration:
 	  var connection_string = 'localhost:27017/meteringpointsmapviewer';
 	  // if OPENSHIFT env variables are present, use the available connection info:
-	  if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD //OpenShift V2 
-		|| process.env.MONGODB_PASSWORD){ // OpenShift V3
+//	  if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD //OpenShift V2 
+//		|| process.env.MONGODB_PASSWORD){ // OpenShift V3
 	    connection_string = (process.env.OPENSHIFT_MONGODB_DB_USERNAME||process.env.MONGODB_USER) + ":" +
 	    (process.env.OPENSHIFT_MONGODB_DB_PASSWORD||process.env.MONGODB_PASSWORD) + "@" +
 	    (process.env.OPENSHIFT_MONGODB_DB_HOST||process.env.MONGODB_SERVICE_HOST) + ':' +
 	    (process.env.OPENSHIFT_MONGODB_DB_PORT||process.env.MONGODB_SERVICE_PORT) + '/' +
 	    (process.env.OPENSHIFT_APP_NAME||process.env.MONGODB_DATABASE);
-	  }
+//	  }
 	  return connection_string;
 	}
 
