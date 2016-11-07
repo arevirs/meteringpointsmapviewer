@@ -46,7 +46,8 @@
     "cookie-parser": "~1.0.0",
     "method-override": "~1.0.0",
     "express-session": "~1.0.0",
-    "later":"1.2.0"
+    "later":"1.2.0",
+    "restler":"3.4.0"
     
   },
   "devDependencies": {},
