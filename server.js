@@ -37,7 +37,7 @@ var generateMongoUrl = function(){
 	  return connection_string;
 	}
 
-
+console.log(generateMongoUrl());
 mongoose.connect(generateMongoUrl()); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
