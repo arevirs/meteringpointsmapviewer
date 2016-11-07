@@ -26,12 +26,13 @@ var generateMongoUrl = function(){
 	   // default to a 'localhost' configuration:
 	  var connection_string = 'localhost:27017/meteringpointsmapviewer';
 	  // if OPENSHIFT env variables are present, use the available connection info:
-	  if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
-	    connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
-	    process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
-	    process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
-	    process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
-	    process.env.OPENSHIFT_APP_NAME;
+	  if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD //OpenShift V2 
+		|| process.env.DATABASE_SERVICE_NAME){ // OpenShift V3
+	    connection_string = (process.env.DATABASE_SERVICE_NAME==null?process.env.OPENSHIFT_MONGODB_DB_USERNAME:process.env[process.env.DATABASE_SERVICE_NAME.toUpperCase()+'_USER']) + ":" +
+	    (process.env.DATABASE_SERVICE_NAME==null?process.env.OPENSHIFT_MONGODB_DB_PASSWORD:process.env[process.env.DATABASE_SERVICE_NAME.toUpperCase()+'_PASSWORD']) + "@" +
+	    (process.env.DATABASE_SERVICE_NAME==null?process.env.OPENSHIFT_MONGODB_DB_HOST:process.env[process.env.DATABASE_SERVICE_NAME.toUpperCase()+'_SERVICE_HOST']) + ':' +
+	    (process.env.DATABASE_SERVICE_NAME==null?process.env.OPENSHIFT_MONGODB_DB_PORT:process.env[process.env.DATABASE_SERVICE_NAME.toUpperCase()+'_SERVICE_PORT']) + '/' +
+	    (process.env.DATABASE_SERVICE_NAME==null?process.env.OPENSHIFT_APP_NAME:process.env[process.env.DATABASE_SERVICE_NAME.toUpperCase()+'_DATABASE']);
 	  }
 	  return connection_string;
 	}
@@ -60,13 +61,13 @@ var SampleApp = function() {
      */
     self.setupVariables = function() {
         //  Set the environment variables we need.
-        self.dbServer = new mongodb.Server(process.env.OPENSHIFT_MONGODB_DB_HOST||'localhost',parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT||27017));
-        self.db = new mongodb.Db(process.env.OPENSHIFT_APP_NAME||'meteringpointsmapviewer', self.dbServer, {auto_reconnect: true});
-        self.dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME||'admin';
-        self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD||'2nlFiR8ShD4s';
+        self.dbServer = new mongodb.Server(process.env.OPENSHIFT_MONGODB_DB_HOST||process.env[process.env.DATABASE_SERVICE_NAME.toUpperCase()+'_SERVICE_HOST']||'localhost',parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT||process.env[process.env.DATABASE_SERVICE_NAME.toUpperCase()+'_SERVICE_PORT']||27017));
+        self.db = new mongodb.Db(process.env.OPENSHIFT_APP_NAME||process.env[process.env.DATABASE_SERVICE_NAME.toUpperCase()+'_DATABASE']||'meteringpointsmapviewer', self.dbServer, {auto_reconnect: true});
+        self.dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME||process.env[process.env.DATABASE_SERVICE_NAME.toUpperCase()+'_USER']||'admin';
+        self.dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD||process.env[process.env.DATABASE_SERVICE_NAME.toUpperCase()+'_PASSWORD']||'2nlFiR8ShD4s';
 
-        self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || 'localhost'
-        self.port      = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || process.env.PORT || 8098
+        self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || process.env.OPENSHIFT_INTERNAL_IP || process.env.IP || '0.0.0.0'
+        self.port      = process.env.OPENSHIFT_NODEJS_PORT ||  process.env.OPENSHIFT_INTERNAL_PORT || process.env.PORT || 8080
 
         if (typeof self.ipaddress === "undefined") {
             //  Log errors on OpenShift but continue w/ 127.0.0.1 - this
